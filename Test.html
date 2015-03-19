@@ -33,10 +33,10 @@
 <p>Spring boot로 REST API를 작성하면 기본적으로는 API수행시 에러가 발생해도 Payload에는 표시가 되지만 서버 콘솔에는 아무 것도 찍히지않는다.
 콘솔에 에러를 프린트 하기 위해서는 resource디렉토리에 logback.xml파일을 생성한뒤 아래와 같이 추가해준다.</p>
 
-<pre><code>
+<pre><code><![CDATA[
     <logger name="org.springframework.boot" level="error">
         <appender-ref ref="${log.appender}" />
-    </logger>
+    </logger>]]>
 </code></pre>
 
 </section>
