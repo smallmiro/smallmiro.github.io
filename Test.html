@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="homeApp">
+
+<head>
+    <title>Hello Spring Boot!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"/>
+    <script type="text/javascript">
+        var homeApp = angular.module('homeApp', []);
+        homeApp.controller("SimpleController", function ($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        })
+    </script>
+</head>
+<body>
+<div ng-controller="SimpleController">
+
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{firstName + " " + lastName}}
+
+</div>
+</div>
+</body>
+
+</html>
