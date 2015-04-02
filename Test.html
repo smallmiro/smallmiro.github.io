@@ -6,16 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Smallmiro.GitHub.io : ">
 
-    <script type="text/javascript" src="/highlighter/scripts/shBrushXml.js"></script>
-    <link type="text/css" rel="stylesheet" href="/highlighter/styles/images/shCore.css">
-    <link type="text/css" rel="stylesheet" href="/highlighter/styles/shThemeDefault.css">
-    <script type="text/javascript">SyntaxHighlighter.all();</script>
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>Smallmiro.GitHub.io</title>
   </head>
 
-  <body Onload="dp.SyntaxHighlighter.HighlightAll('code');">
+  <body>
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
@@ -32,18 +28,17 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spring boot web에서 로그에 에러 찍기</h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spring-boot 시작하기</h3>
 
-<p>Spring boot로 REST API를 작성하면 기본적으로는 API수행시 에러가 발생해도 Payload에는 표시가 되지만 서버 콘솔에는 아무 것도 찍히지않는다.
-콘솔에 에러를 프린트 하기 위해서는 resource디렉토리에 logback.xml파일을 생성한뒤 아래와 같이 추가해준다.</p>
+<p>Spring-boot 시작하기</p>
 
-<textarea name="code" class="brush:xml;">
-    <logger name="org.springframework.boot" level="error">
-        <appender-ref ref="${log.appender}" />
-    </logger>
-</textarea>    
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
 
-</section>
+
+      </section>
     </div>
 
     <!-- FOOTER  -->
