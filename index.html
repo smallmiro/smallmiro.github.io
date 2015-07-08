@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="topApp">
 	<head>
 		<meta charset='utf-8'>
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<meta name="description" content="Smallmiro.GitHub.io : ">
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+		<script src="js/controller/home.js"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<title>Smallmiro.GitHub.io</title>
 	</head>
-	<body>
+	<body ng-controller="legoController">
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -19,18 +20,10 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Project name</a>
+					<a class="navbar-brand" href="#">레고 공홈 가격</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
-					<form class="navbar-form navbar-right">
-						<div class="form-group">
-							<input type="text" placeholder="Email" class="form-control">
-						</div>
-						<div class="form-group">
-							<input type="password" placeholder="Password" class="form-control">
-						</div>
-						<button type="submit" class="btn btn-success">Sign in</button>
-					</form>
+
 				</div>
 				<!--/.navbar-collapse -->
 			</div>
@@ -49,9 +42,16 @@
 			<div id="main_content_wrap" class="outer">
 				<section id="main_content" class="inner">
 					<h3>
-						<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.
+						<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.<button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
 					</h3>
-					<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+					<p>
+						<div class="input-group">
+						  <input type="text" class="form-control" placeholder="Lego shop URL" aria-describedby="basic-addon2" ng-model="shopUrl">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button" ng-click="getPrice()">Get Price!</button>
+							</span>
+						</div>
+					</p>
 					<pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
 $ git checkout gh-pages
