@@ -1,24 +1,33 @@
-angular.module('topApp', []).controller('legoController', function($scope, $http) {
-  $http.defaults.headers.put = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With'
-        };
-        $http.defaults.useXDomain = true;
-  var url = "http://127.0.0.1:8080/gonghome/price/1?callback=JSON_CALLBACK";
+var baseUrl = "http://127.0.0.1:8080";
+var mainHomeApp = angular.module('topApp', []);
+mainHomeApp.factory('product', ['$http',  function($http) {
+  var orders = [];
+  return {
+    getPrice: function(priceCode) {
+      var priceUrl = "/gonghome/price/" + priceCode + "?callback=JSON_CALLBACK";
+      return $http.jsonp(baseUrl + priceUrl)
+          .success(function(data){
+              console.log(data);
+          });
+    },
+    getProduct: function(inputUrl) {
+      var callurl = baseUrl + "/gonghome/meta?callback=JSON_CALLBAC";
+      return $http.({method: "JSONP", url: callurl, data : { url : inputUrl }}).success(function(data){
+              console.log(data);
+          });
+    }
+  };
+}]);
+mainHomeApp.controller('legoController', ['product'], function($scope, $http, product) {
   $scope.addAlert = function() {
-    $http.jsonp(url)
-        .success(function(data){
-            console.log(data);
-        });
-    };
+    product.getPrice("10218").then(function(response) {
+      console.log(response);
+    })
+  };
 
-  $scope.getPrice = function(){
-    console.log($scope.shopUrl);
-    var callurl = "http://127.0.0.1:8080/gonghome/meta?callback=JSON_CALLBAC";
-    $http.({method: "JSONP", url: callurl, data : { url : $scope.shopUrl }})
-        .success(function(data){
-            console.log(data);
-        });
-  }
+  $scope.getProduct = function(){
+    product.getPrice($scope.shopUrl).then(function(response) {
+      console.log(response);
+    })
+
 });
