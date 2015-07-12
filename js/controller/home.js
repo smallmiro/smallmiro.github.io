@@ -1,4 +1,4 @@
-var baseUrl = "http://127.0.0.1:8080";
+var baseUrl = "http://ec2-54-152-124-0.compute-1.amazonaws.com:8080";
 var mainHomeApp = angular.module('topApp', []);
 mainHomeApp.factory('product', ['$http',  function($http) {
   var orders = [];
@@ -11,14 +11,21 @@ mainHomeApp.factory('product', ['$http',  function($http) {
           });
     },
     getProduct: function(inputUrl) {
-      var callurl = baseUrl + "/gonghome/meta?callback=JSON_CALLBAC";
-      return $http.({method: "JSONP", url: callurl, data : { url : inputUrl }}).success(function(data){
-              console.log(data);
-          });
+      var callurl = baseUrl + "/gonghome/meta?callback=JSON_CALLBACK";
+      $http({
+        method: 'JSONP',
+        url: callurl,
+        data  : { url : inputUrl }
+      }).success(function(data, status , header, config){
+           console.log(data);
+      }).error(function(data, status , header, config){
+           console.log('error');
+      });
     }
   };
 }]);
-mainHomeApp.controller('legoController', ['product'], function($scope, $http, product) {
+
+mainHomeApp.controller('legoController',  function($scope, $http, product) {
   $scope.addAlert = function() {
     product.getPrice("10218").then(function(response) {
       console.log(response);
@@ -26,8 +33,9 @@ mainHomeApp.controller('legoController', ['product'], function($scope, $http, pr
   };
 
   $scope.getProduct = function(){
+    console.log("getProduct");
     product.getPrice($scope.shopUrl).then(function(response) {
       console.log(response);
     })
-
+  };
 });
