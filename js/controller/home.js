@@ -4,7 +4,8 @@ var mainHomeApp = angular.module('topApp', []);
 mainHomeApp.filter('countryImage', ['$filter', function($filter) {
   return function(input) {
     if (! input) return;
-    return input.substring( 3, 5 );
+    var ISO31661ALPHA2= input.substring( 3, 5 );
+    return "/image/country/" + ISO31661ALPHA2 + ".png"
   };
 }]);
 

@@ -59,7 +59,7 @@
 							</div>
 							<div class="col-sm-4">
 								<div class="row"  ng-repeat="price in product.prices">
-							    <div class="col-sm-12"><h4>{{price.country | countryImage}} : {{price.price}}({{price.salePrice}})</h4></div>
+							    <div class="col-sm-12"><h4><img src="{{price.country | countryImage}}" class="img-responsive" > : {{price.price}}({{price.salePrice}})</h4></div>
 								</div>
 							</div>
 						</div>
@@ -82,6 +82,6 @@
 		  ga('create', 'UA-65082625-1', 'auto');
 		  ga('send', 'pageview');
 
-		</script>		
+		</script>
 	</body>
 </html>
