@@ -9,6 +9,21 @@ mainHomeApp.filter('countryImage', ['$filter', function($filter) {
   };
 }]);
 
+mainHomeApp.filter('shopUrl', ['$filter', function($filter) {
+  return function(product, country) {
+    if (! product) return;
+    var baseUrl = "http://shop.lego.com/";
+    var productUlr = "";
+    var ISO31661ALPHA2 = country.substring( 3, 5 );
+    if(ISO31661ALPHA2 == "KR") {
+      productUlr = country + "/" + product.urlKoreanName + "-" + product.prodCode;
+    } else {
+      productUlr = country + "/" + product.urlName + "-" + product.prodCode;
+    }
+    return baseUrl + productUlr;
+  };
+}]);
+
 mainHomeApp.factory('product', ['$http',  function($http) {
   var orders = [];
   return {
