@@ -1,6 +1,6 @@
 //var baseUrl = "http://127.0.0.1:8080";
 var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
-var mainHomeApp = angular.module('topApp', []);
+var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 mainHomeApp.filter('countryImage', ['$filter', function($filter) {
   return function(input) {
     if (! input) return;
