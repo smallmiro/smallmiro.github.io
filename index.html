@@ -41,25 +41,22 @@
 		<div class="jumbotron">
 			<div class="container">
 				<header class="inner">
-					<h2 id="project_title">레고 공홈 가격비교</h2>
+					<h2 id="project_title">레고 공홈 가격비교 <small>Let's search!!</small></h2>
 				</header>
+				<p>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Lego shop URL ex)http://shop.lego.com/en-DE/B-Wing-75050" aria-describedby="basic-addon2" ng-model="shopUrl">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" ng-click="getPrice()">Get Price!</button>
+						</span>
+					</div>
+				</p>
 			</div>
 		</div>
 		<div class="container">
 			<!-- MAIN CONTENT -->
 			<div id="main_content_wrap" class="outer">
 				<section id="main_content" class="inner">
-					<h3>
-						<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Let's search!!
-					</h3>
-					<p>
-						<div class="input-group">
-						  <input type="text" class="form-control" placeholder="Lego shop URL ex)http://shop.lego.com/en-DE/B-Wing-75050" aria-describedby="basic-addon2" ng-model="shopUrl">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="button" ng-click="getPrice()">Get Price!</button>
-							</span>
-						</div>
-					</p>
 					<div class="row">
 				    <div class="col-sm-12" ng-repeat="product in products">
 							<div class="page-header"><h3>{{product.name}} <small>(Item:{{product.prodCode}})</small></h3></div>
@@ -70,7 +67,7 @@
 								<div class="row"  ng-repeat="price in product.prices">
 									<div class="col-sm-4">
 										<a href="{{product | shopUrl:price.country}}" target="{{price.country}}">
-									    <h4><span class="label label-primary"><img src="{{price.country | countryImage}}" height="16" ></span><span>{{price.price}}({{price.salePrice}})</span></h4>
+									    <h4><span class="label label-primary"><img src="{{price.country | countryImage}}" height="16" ></span><span>{{price.price}}({{price.salePrice}}) : {{price.krw}} krw</span></h4>
 										</a>
 									</div
 								</div>
@@ -82,7 +79,6 @@
 			<!-- FOOTER  -->
 			<div id="footer_wrap" class="outer">
 				<footer class="inner">
-					<p>만든이 오준환</p>
 				</footer>
 			</div>
 		</div>

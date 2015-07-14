@@ -57,6 +57,9 @@ mainHomeApp.controller('legoController',  function($scope, $http, product) {
       product.getPrice(prodCode, function(prices){
         console.log(prices);
         productInfo.prices = prices.price;
+
+        productInfo.sum = prices.sum;
+        productInfo.avg = prices.avg;
         console.log(productInfo);
         $scope.products = [productInfo];
         console.log($scope.products);
