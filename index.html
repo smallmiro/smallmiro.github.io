@@ -84,7 +84,7 @@
 					        <p>
 										<table>
 											<tr ng-repeat="price in product.prices">
-												<td data-ng-show="$last && ($index < 4)"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</td>
+												<td ><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</td>
 												<td align="middle right">{{price.krw | number:0}} krw</td>
 											</tr>
 										</table>
