@@ -6,13 +6,13 @@ mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
     if (! price.price.availabilityMessage) return "success";
     var message = price.availabilityMessage;
-    if(message.indexOf("Out of stock") >= 0 || message == '일시품절' || message.indexOf("Call to check") >= 0 ){
+    if(message.indexOf("Out of stock") || message == '일시품절' || message.indexOf("Call to check")){
       return "warning"
-    } else if(message.indexOf('Sold Out') >= 0) {
+    } else if(message.indexOf('Sold Out')) {
         return "danger"
-    } else if(message.indexOf('Coming Soon') >= 0) {
+    } else if(message.indexOf('Coming Soon')) {
         return "info"
-    } else if(message.indexOf('Retired product') >= 0) {
+    } else if(message.indexOf('Retired product')) {
         return "primary"
     } else {
       return "success"
@@ -111,12 +111,10 @@ mainHomeApp.factory('product', ['$http',  function($http) {
 
 
 mainHomeApp.controller('legoController',  function($scope, $http, product) {
-  $scope.addAlert = function() {
-    product.getPrice("10218", function(data){
-      console.log(data);
-    });
-  };
 
+  $scope.popup =function(shopUrl){
+    $window.open(shopUrl, '_blank');
+  };
   $scope.getPrice = function(){
     product.getProduct($scope.shopUrl, function(productInfo){
       var prodCode = productInfo.prodCode;
