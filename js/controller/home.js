@@ -2,10 +2,10 @@
 var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
 var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 
-mainHomeApp.filter('status', ['$filter', function($filter) {
+mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
-    if (! price) return;
-    var message;
+    if (! price.price.availabilityMessage) return "success";
+    var message.price.availabilityMessage;
     if(message.indexOf("Out of stock") >= 0 || message = '일시품절' || message.indexOf("Call to check") >= 0 ){
       return "warning"
     } else if(message.indexOf('Sold Out') >= 0) {
