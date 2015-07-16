@@ -86,6 +86,7 @@
 											<tr ng-repeat="price in product.prices">
 												<td ><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</td>
 												<td align="middle right">{{price.krw | number:0}} krw</td>
+												<td align="middle right">{{price.availabilityMessage}}</td>
 											</tr>
 										</table>
 									</p>
