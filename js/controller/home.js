@@ -40,7 +40,7 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
             case 'en-DE' :
                     return "독일";
             case 'en-ES' :
-                    return "";
+                    return "스페인";
             case 'en-FR' :
                     return "프랑스";
             case 'en-IT' :
@@ -48,7 +48,7 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
             case 'en-HU' :
                     return "헝가리";
             case 'en-NL' :
-                    return "";
+                    return "룩셈부르크";
             case 'en-NO' :
                     return "노르웨이";
             case 'en-PL' :
@@ -56,7 +56,7 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
             case 'en-FI' :
                     return "필란드";
             case 'en-SE' :
-                    return "";
+                    return "스웨덴";
             case 'en-GB' :
                     return "영국";
             case 'en-AU' :
