@@ -80,10 +80,10 @@
 								<h3>
 									<img ng-src="{{product.categoryImage}}">
 									{{product.name}} <small>(Item:{{product.prodCode}})</small></h3></div>
-							<div class="col-sm-8">
+							<div class="col-sm-4">
 								<img ng-src="{{product.image}}" class="img-responsive" >
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-8">
 								<div class="row"  ng-repeat="price in product.prices">
 									<div class="col-sm-12">
 										<a href="{{product | shopUrl:price.country}}" target="{{price.country}}">
@@ -95,7 +95,25 @@
 						</div>
 				  </div>
 				</section>
+				<!--
+				<section id="main_content" class="inner">
+					<div class="row">
+					  <div class="col-sm-6 col-md-4">
+					    <div class="thumbnail">
+					      <img ng-src="..." alt="...">
+					      <div class="caption">
+					        <h3>Thumbnail label</h3>
+					        <p>...</p>
+					        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</section>
+				-->
+
 			</div>
+
 			<!-- FOOTER  -->
 			<div id="footer_wrap" class="outer">
 				<footer class="inner">
