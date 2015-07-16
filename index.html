@@ -64,7 +64,7 @@
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Lego shop URL ex) http://shop.lego.com/en-DE/B-Wing-75050" aria-describedby="basic-addon2" ng-model="shopUrl">
 						<span class="input-group-btn">
-							<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#search_content" aria-expanded="false" aria-controls="collapseExample" ng-click="getPrice()">Get Price!</button>
+							<button class="btn btn-default" type="button" ng-click="getPrice()">Get Price!</button>
 						</span>
 					</div>
 				</p>
@@ -73,7 +73,7 @@
 		<div class="container">
 			<!-- MAIN CONTENT -->
 			<div id="main_content_wrap" class="outer">
-				<section id="search_content" class="collapse" >
+				<section id="search_content" class="inner" >
 					<div class="row">
 				    <div class="col-sm-12" ng-repeat="product in products">
 							<div class="page-header">
