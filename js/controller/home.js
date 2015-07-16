@@ -111,10 +111,6 @@ mainHomeApp.factory('product', ['$http',  function($http) {
 
 
 mainHomeApp.controller('legoController',  function($scope, $http, $window, product) {
-
-  $scope.popup =function(shopUrl){
-    $window.open(shopUrl, '_blank');
-  };
   $scope.getPrice = function(){
     product.getProduct($scope.shopUrl, function(productInfo){
       var prodCode = productInfo.prodCode;
