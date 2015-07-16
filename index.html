@@ -103,6 +103,7 @@
 					<div class="row">
 					  <div class="col-sm-6 col-md-4"  ng-repeat="product in products">
 					    <div class="thumbnail">
+								<img ng-src="{{product.categoryImage}}">
 					      <img ng-src="{{product.image}}">
 					      <div class="caption">
 					        <h3>{{product.name}} <small>(Item:{{product.prodCode}})</small></h3>
@@ -110,7 +111,7 @@
 										<table>
 											<tr ng-repeat="price in product.prices by $index">
 												<td data-ng-show="$last && ($index < 4)"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</td>
-												<td align="middle right" data-ng-show="($index < 4)">{{price.krw | number:0}} krw</td>
+												<td align="middle right">{{price.krw | number:0}} krw</td>
 											</tr>
 										</table>
 									</p>
