@@ -23,6 +23,51 @@ mainHomeApp.filter('shopUrl', ['$filter', function($filter) {
     return baseUrl + productUlr;
   };
 }]);
+mainHomeApp.filter('countryName', ['$filter', function($filter) {
+  return function(country) {
+    if (! country) return;
+    switch (country) {
+            case 'en-US' :
+                    return "미국";
+            case 'ko-KR' :
+                    return "대한민국";
+            case 'en-BE' :
+                    return "벨기에";
+            case 'en-CZ' :
+                    return "크로아티아";
+            case 'en-DK' :
+                    return "덴마크";
+            case 'en-DE' :
+                    return "독일";
+            case 'en-ES' :
+                    return "";
+            case 'en-FR' :
+                    return "프랑스";
+            case 'en-IT' :
+                    return "이태리";
+            case 'en-HU' :
+                    return "헝가리";
+            case 'en-NL' :
+                    return "";
+            case 'en-NO' :
+                    return "노르웨이";
+            case 'en-PL' :
+                    return "폴란드";
+            case 'en-FI' :
+                    return "필란드";
+            case 'en-SE' :
+                    return "";
+            case 'en-GB' :
+                    return "영국";
+            case 'en-AU' :
+                    return "호주";
+            case 'en-NZ' :
+                    return "뉴질랜드";
+            case 'en-CA' :
+                    return "캐나";
+    }
+  };
+}]);
 
 mainHomeApp.factory('product', ['$http',  function($http) {
   var orders = [];
