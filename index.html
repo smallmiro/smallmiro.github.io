@@ -85,7 +85,9 @@
 										<table width=100%>
 											<tr ng-repeat="price in product.prices">
 												<td ><span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</span></td>
-												<td align="right">{{price.krw | number:0}} krw <button type="button" onClick="window.open('{{product | shopUrl:price.country}}','lego')">Go!</button></td>
+												<td align="right">{{price.krw | number:0}} krw
+													<a href="{{product | shopUrl:price.country}}"><button type="button">Go!</button></a>
+												</td>
 											</tr>
 										</table>
 									</p>
