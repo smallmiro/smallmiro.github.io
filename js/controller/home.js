@@ -4,7 +4,7 @@ var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 
 mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
-    if (! price.price.availabilityMessage) return "success";
+    if (! price.availabilityMessage) return "success";
     var message = price.availabilityMessage;
     if(message.indexOf("Out of stock") || message == '일시품절' || message.indexOf("Call to check") || price.krw == 0){
       return "warning"
