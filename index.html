@@ -87,9 +87,11 @@
 								<div class="row">
 									<div class="col-sm-6" ng-repeat="price in product.prices">
 
-								    <h4><span class="label label-primary"><img ng-src="{{price.country | countryImage}}" height="16" >
-											<a href="{{product | shopUrl:price.country}}" target="{{price.country}}">{{price.country | countryName}}</a>
-										</span><span>{{price.price | number}}({{price.salePrice | number}}) : {{price.krw | number:0}} krw</span></h4>
+								    <h4>
+											<a href="{{product | shopUrl:price.country}}" target="{{price.country}}">
+												<span class="label label-primary"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</span>
+											</a>
+										<span>{{price.price | number}}({{price.salePrice | number}}) : {{price.krw | number:0}} krw</span></h4>
 
 									</div>
 								</div>
