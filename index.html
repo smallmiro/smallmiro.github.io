@@ -85,7 +85,7 @@
 							</div>
 							<div class="col-sm-8">
 								<div class="row"  ng-repeat="price in product.prices">
-									<div class="col-sm-12">
+									<div class="col-sm-4">
 										<a href="{{product | shopUrl:price.country}}" target="{{price.country}}">
 									    <h4><span class="label label-primary"><img ng-src="{{price.country | countryImage}}" height="16" ></span><span>{{price.price | number}}({{price.salePrice | number}}) : {{price.krw | number:0}} krw</span></h4>
 										</a>
