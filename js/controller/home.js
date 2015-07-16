@@ -6,7 +6,7 @@ mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
     if (! price.price.availabilityMessage) return "success";
     var message = price.availabilityMessage;
-    if(message.indexOf("Out of stock") || message == '일시품절' || message.indexOf("Call to check")){
+    if(message.indexOf("Out of stock") || message == '일시품절' || message.indexOf("Call to check") || price.krw == 0){
       return "warning"
     } else if(message.indexOf('Sold Out')) {
         return "danger"
