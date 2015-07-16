@@ -1,6 +1,26 @@
 //var baseUrl = "http://127.0.0.1:8080";
 var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
 var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
+
+mainHomeApp.filter('status', ['$filter', function($filter) {
+  return function(price) {
+    if (! price) return;
+    var message;
+    if(message.indexOf("Out of stock") >= 0 || message = '일시품절' || message.indexOf("Call to check") >= 0 ){
+      return "warning"
+    } else if(message.indexOf('Sold Out') >= 0) {
+        return "danger"
+    } else if(message.indexOf('Coming Soon') >= 0) {
+        return "info"
+    } else if(message.indexOf('Retired product') >= 0) {
+        return "primary"
+    } else {
+      return "success"
+    }
+
+  };
+}]);
+
 mainHomeApp.filter('countryImage', ['$filter', function($filter) {
   return function(input) {
     if (! input) return;
@@ -88,6 +108,7 @@ mainHomeApp.factory('product', ['$http',  function($http) {
     }
   };
 }]);
+
 
 mainHomeApp.controller('legoController',  function($scope, $http, product) {
   $scope.addAlert = function() {
