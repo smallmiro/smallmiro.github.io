@@ -49,6 +49,8 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
     switch (country) {
             case 'en-US' :
                     return "미국";
+            case 'am-US' :
+                    return "미국-아마존";
             case 'ko-KR' :
                     return "대한민국";
             case 'en-BE' :
@@ -59,6 +61,8 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
                     return "덴마크";
             case 'en-DE' :
                     return "독일";
+            case 'am-DE' :
+                    return "독일-아마존";
             case 'en-ES' :
                     return "스페인";
             case 'en-FR' :
@@ -84,7 +88,9 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
             case 'en-NZ' :
                     return "뉴질랜드";
             case 'en-CA' :
-                    return "캐나";
+                    return "캐나다";
+            case 'am-JP' :
+                    return "일본-아마존";
     }
   };
 }]);
