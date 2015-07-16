@@ -110,7 +110,7 @@ mainHomeApp.factory('product', ['$http',  function($http) {
 }]);
 
 
-mainHomeApp.controller('legoController',  function($scope, $http, product) {
+mainHomeApp.controller('legoController',  function($scope, $http, $window, product) {
 
   $scope.popup =function(shopUrl){
     $window.open(shopUrl, '_blank');
