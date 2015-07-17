@@ -104,14 +104,20 @@
 								 <h2>가격 및 상태 정보 [{{product.badgeName}}]</h2>
 							 </div>
 						   <div class="panel-body">
-						     <p><h3>카테고리 : {{product.category}}</p>
-									 <p>item : {{product.prodCode}}</h3></p>
+								 <blockquote>
+								  <p>카테고리 : {{product.category}}</p>
+								  <footer>item : <cite title="Source Title">{{product.prodCode}}</cite></footer>
+								</blockquote>
 						   </div>
 						   <!-- Table -->
 							 <div class="table-responsive">
 						   <table class="table  table-striped">
 									 <tr ng-repeat="price in product.prices" ng-hide="checkShow(price)">
-								 		<td class="text-center"><span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</span></td>
+								 		<td class="text-center">
+											<span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}">
+												<img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}
+											</span>
+										</td>
 										<td class="text-left" style="overflow-y: hidden">{{price.availabilityMessage}}</td>
 								 		<td class="text-right">{{price.krw | number:0}} krw</td>
 										<td class="text-left">{{price.saleStatus}}</tb>
@@ -119,7 +125,8 @@
 								 	</tr>
 								 	<tr class="info">
 								 		<td class="text-center">평균</td>
-								 		<td colspan="3" class="text-right">{{product.avg| number:0}} krw</td>
+								 		<td colspan="2" class="text-right">{{product.avg| number:0}} krw</td>
+										<td></td>
 										<td></td>
 								 	</tr>
 						   </table>
