@@ -123,7 +123,6 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, produ
       return true;
     } else if(price.krw <= 0) {
       return true;
-    }
     } else {
       return false;
     }
