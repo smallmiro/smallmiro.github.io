@@ -121,8 +121,6 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, produ
   $scope.checkShow = function(price){
     if(price.krw <= 0 && price.availabilityMessage != 'Retired product') {
       return true;
-    } else if(price.krw <= 0) {
-      return true;
     } else {
       return false;
     }
