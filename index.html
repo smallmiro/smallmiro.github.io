@@ -101,7 +101,7 @@
 							<div class="panel panel-default">
 							<!-- Default panel contents -->
 						   <div class="panel-heading">
-								 <h2>가격 및 상태 정보 [{{product.badgeName}}]</h2>
+								 <h3>가격 및 상태 정보 [{{product.badgeName}}]</h3>
 							 </div>
 						   <div class="panel-body">
 								 <blockquote>
@@ -112,6 +112,13 @@
 						   <!-- Table -->
 							 <div class="table-responsive">
 						   <table class="table  table-striped">
+								 <tr class="active">
+									 <th>국가</th>
+									 <th>판매 메세지</th>
+									 <th>가격</th>
+									 <th>판매상태</th>
+									 <th></th>
+								 </tr>
 									 <tr ng-repeat="price in product.prices" ng-hide="checkShow(price)">
 								 		<td class="text-center">
 											<span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}">
