@@ -1,18 +1,18 @@
-//var baseUrl = "http://127.0.0.1:8080";
-var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
+var baseUrl = "http://127.0.0.1:8080";
+//var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
 var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 
 mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
-    if (! price.price.availabilityMessage) return "success";
+    if (! price.availabilityMessage) return "success";
     var message = price.availabilityMessage;
-    if(message.indexOf("Out of stock") || message == '일시품절' || message.indexOf("Call to check") || price.krw == 0){
+    if(message.indexOf("Out of stock") >=0 || message == '일시품절' || message.indexOf("Call to check") >=0  || price.krw <= 0){
       return "warning"
-    } else if(message.indexOf('Sold Out')) {
+    } else if(message.indexOf('Sold Out') >=0 ) {
         return "danger"
-    } else if(message.indexOf('Coming Soon')) {
+    } else if(message.indexOf('Coming Soon') >=0 ) {
         return "info"
-    } else if(message.indexOf('Retired product')) {
+    } else if(message.indexOf('Retired product') >=0 ) {
         return "primary"
     } else {
       return "success"
