@@ -15,7 +15,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
-		<script src="js/controller/home.js?20150717002"></script>
+		<script src="js/controller/home.js?20150717001"></script>
 		<script src="js/ngActivityIndicator.min.js"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/ngActivityIndicator.css">
@@ -108,7 +108,7 @@
 						   </div>
 						   <!-- Table -->
 						   <table class="table">
-									 <tr ng-repeat="price in product.prices" ng-hide="checkShow(price)">
+									 <tr ng-repeat="price in product.prices" ng-hide="!(price.krw > 0 && price.availabilityMessage != 'Retired product')">
 								 		<td align="center"><span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</span></td>
 										<td align="left">{{price.availabilityMessage}}</td>
 								 		<td align="right">{{price.krw | number:0}} krw</td>
