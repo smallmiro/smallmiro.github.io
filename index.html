@@ -108,19 +108,21 @@
 									 <p>item : {{product.prodCode}}</h3></p>
 						   </div>
 						   <!-- Table -->
-						   <table class="table">
+							 <div class="table-responsive">
+						   <table class="table  table-striped">
 									 <tr ng-repeat="price in product.prices" ng-hide="checkShow(price)">
-								 		<td align="center"><span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</span></td>
-										<td align="left">{{price.availabilityMessage}}</td>
-								 		<td align="right">{{price.krw | number:0}} krw</td>
-										<td align="left">{{price.saleStatus}}</tb>
+								 		<td class="text-center"><span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</span></td>
+										<td class="text-left" style="overflow-y: hidden">{{price.availabilityMessage}}</td>
+								 		<td class="text-right">{{price.krw | number:0}} krw</td>
+										<td class="text-left">{{price.saleStatus}}</tb>
 										<td><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
 								 	</tr>
-								 	<tr>
+								 	<tr class="info">
 								 		<td>평균</td>
 								 		<td align="right">{{product.avg| number:0}} krw</td>
 								 	</tr>
 						   </table>
+						 	</div>
 						</div>
 				 </div>
 					</div>
