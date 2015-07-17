@@ -116,7 +116,15 @@ mainHomeApp.factory('product', ['$http',  function($http) {
 }]);
 
 
+
 mainHomeApp.controller('legoController',  function($scope, $http, $window, product) {
+  $scope.checkShow = function(price){
+    if(!(price.krw > 0 && price.availabilityMessage != 'Retired product') {
+      return true;
+    } else {
+      return false;
+    }
+  };
   $scope.getPrice = function(){
     product.getProduct($scope.shopUrl, function(productInfo){
       var prodCode = productInfo.prodCode;

@@ -15,8 +15,10 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
-		<script src="js/controller/home.js?20150717001"></script>
+		<script src="js/controller/home.js?20150717002"></script>
+		<script src="js/ngActivityIndicator.min.js"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/ngActivityIndicator.css">
 		<title>레고 공홈 가격비교</title>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -66,7 +68,8 @@
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Lego shop URL ex) http://shop.lego.com/en-DE/B-Wing-75050" aria-describedby="basic-addon2" ng-model="shopUrl">
 						<span class="input-group-btn">
-							<button class="btn btn-default" type="button" ng-click="getPrice()">Get Price!</button>
+							<div ng-activity-indicator="CircledWhite"></div>
+							<button ng-show="!AILoading" class="btn btn-default" type="button" ng-click="getPrice()">Get Price!</button>
 						</span>
 					</div>
 				</p>
@@ -105,7 +108,7 @@
 						   </div>
 						   <!-- Table -->
 						   <table class="table">
-									 <tr ng-repeat="price in product.prices" ng-hide="!(price.krw > 0)">
+									 <tr ng-repeat="price in product.prices" ng-hide="checkShow(price)">
 								 		<td align="center"><span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}"><img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}</span></td>
 										<td align="left">{{price.availabilityMessage}}</td>
 								 		<td align="right">{{price.krw | number:0}} krw</td>
