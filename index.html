@@ -113,10 +113,10 @@
 							 <div class="table-responsive">
 						   <table class="table  table-striped">
 								 <tr class="active">
-									 <th>국가</th>
-									 <th>판매 메세지</th>
-									 <th>가격</th>
-									 <th>판매상태</th>
+									 <th class="text-center">국가</th>
+									 <th class="text-center">판매 메세지</th>
+									 <th class="text-center">가격</th>
+									 <th class="text-center">판매상태</th>
 									 <th></th>
 								 </tr>
 									 <tr ng-repeat="price in product.prices" ng-hide="checkShow(price)">
@@ -127,8 +127,8 @@
 										</td>
 										<td class="text-left" style="overflow-y: hidden">{{price.availabilityMessage}}</td>
 								 		<td class="text-right">{{price.krw | number:0}} krw</td>
-										<td class="text-left">{{price.saleStatus}}</tb>
-										<td><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
+										<td class="text-center">{{price.saleStatus}}</tb>
+										<td class="text-center"><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
 								 	</tr>
 								 	<tr class="info">
 								 		<td class="text-center">평균</td>
