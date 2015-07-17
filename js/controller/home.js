@@ -129,14 +129,11 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, produ
     product.getProduct($scope.shopUrl, function(productInfo){
       var prodCode = productInfo.prodCode;
       product.getPrice(prodCode, function(prices){
-        console.log(prices);
         productInfo.prices = prices.price;
 
         productInfo.sum = prices.sum;
         productInfo.avg = prices.avg;
-        console.log(productInfo);
         $scope.products = [productInfo];
-        console.log($scope.products);
       });
     });
   };
