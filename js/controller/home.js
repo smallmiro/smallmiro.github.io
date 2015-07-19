@@ -1,5 +1,5 @@
-//var baseUrl = "http://127.0.0.1:8080";
-var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
+var baseUrl = "http://127.0.0.1:8080";
+//var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
 var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 
 mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
@@ -115,11 +115,31 @@ mainHomeApp.factory('product', ['$http',  function($http) {
   };
 }]);
 
+mainHomeApp.factory('list', ['$http',  function($http) {
+  var orders = [];
+  return {
+    hardList: function(page, callback) {
+      var callurl = baseUrl + "/hard/list?page="+page;
+      $http.get(callurl).success(function(data, status , header, config){
+            console.debug(status);
+           callback(data);
+      });
+    }
+  };
+}]);
 
+mainHomeApp.controller('legoController',  function($scope, $http, $window, product, list) {
 
-mainHomeApp.controller('legoController',  function($scope, $http, $window, product) {
+    $scope.hardlist = [];
   $scope.checkShow = function(price){
     if(price.krw <= 0 && price.availabilityMessage != 'Retired product') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  $scope.moreList = function(hardList){
+    if(!hardList || hardList.size > 0) {
       return true;
     } else {
       return false;
@@ -137,4 +157,19 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, produ
       });
     });
   };
+  var nextPage = 0;
+  $scope.getHardList = function(){
+    list.hardList(nextPage , function(dataList){
+      console.debug(dataList);
+      //$scope.hardlist = dataList.list;
+      angular.forEach(dataList.list, function(value) {
+        this.push(value);
+      }, $scope.hardlist);
+      nextPage = dataList.nextPage;
+    });
+  };
+  $scope.viewDetail = function(prodCode) {
+    $scope.shopUrl = prodCode;
+    $scope.getPrice();
+  }
 });
