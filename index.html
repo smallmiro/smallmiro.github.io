@@ -119,7 +119,7 @@
 									 <th class="text-center">판매상태</th>
 									 <th></th>
 								 </tr>
-									 <tr ng-repeat="price in product.prices" ng-hide="checkShow(price)">
+									 <tr ng-repeat="price in product.prices">
 								 		<td class="text-center">
 											<span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}">
 												<img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}
