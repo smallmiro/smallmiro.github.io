@@ -1,5 +1,5 @@
-var baseUrl = "http://127.0.0.1:8080";
-//var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
+//var baseUrl = "http://127.0.0.1:8080";
+var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
 var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 
 mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
