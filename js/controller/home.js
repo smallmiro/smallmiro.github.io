@@ -1,7 +1,12 @@
 //var baseUrl = "http://127.0.0.1:8080";
 var baseUrl = "http://LEGO-ELB-61416480.us-east-1.elb.amazonaws.com";
 var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
-
+mainHomeApp.config(function($locationProvider) {
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+});
 mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
 
@@ -130,9 +135,10 @@ mainHomeApp.factory('list', ['$http',  function($http) {
   };
 }]);
 
-mainHomeApp.controller('legoController',  function($scope, $http, $window, product, list) {
+mainHomeApp.controller('legoController',  function($scope, $http, $window, $location, product, list) {
 
-    $scope.hardlist = [];
+
+  $scope.hardlist = [];
   $scope.checkShow = function(price){
     if(price.krw <= 0 && price.availabilityMessage != 'Retired product') {
       return true;
@@ -173,5 +179,9 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, produ
   $scope.viewDetail = function(prodCode) {
     $scope.shopUrl = prodCode;
     $scope.getPrice();
+  }
+  var prodCode = $location.search().prodcode;
+  if(prodCode){
+    $scope.viewDetail(prodCode);
   }
 });
