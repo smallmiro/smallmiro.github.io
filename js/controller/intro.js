@@ -10,4 +10,5 @@ introApp.config(function($locationProvider) {
 introApp.controller('introController',  function($scope) {
 
   $scope.navbarCollapsed = true;
-}
+
+});
