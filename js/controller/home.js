@@ -137,7 +137,7 @@ mainHomeApp.factory('list', ['$http',  function($http) {
 
 mainHomeApp.controller('legoController',  function($scope, $http, $window, $location, product, list) {
 
-
+  $scope.navbarCollapsed = true;
   $scope.hardlist = [];
   $scope.checkShow = function(price){
     if(price.krw <= 0 && price.availabilityMessage != 'Retired product') {
