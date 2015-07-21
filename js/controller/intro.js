@@ -1,13 +1,13 @@
 
-var mainHomeApp = angular.module('introApp', ['ui.bootstrap']);
-mainHomeApp.config(function($locationProvider) {
+var introApp = angular.module('introApp', ['ui.bootstrap']);
+introApp.config(function($locationProvider) {
   $locationProvider.html5Mode({
     enabled: true,
     requireBase: false
   });
 });
 
-mainHomeApp.controller('introController',  function($scope, $http, $window, $location, product, list) {
+introApp.controller('introController',  function($scope) {
 
   $scope.navbarCollapsed = true;
 }
