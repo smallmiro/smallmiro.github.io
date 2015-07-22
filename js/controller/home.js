@@ -136,6 +136,7 @@ mainHomeApp.factory('list', ['$http',  function($http) {
 
 mainHomeApp.controller('legoController',  function($scope, $http, $window, $location, product, list) {
   $scope.isLoading = false;
+  $scope.isListLoading = false;
   $scope.navbarCollapsed = true;
   $scope.hardlist = [];
   $scope.more = "more";
@@ -170,6 +171,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
   };
   var nextPage = 0;
   $scope.getHardList = function(){
+    $scope.isListLoading = true;
     $scope.more = "Loading..."
     list.hardList(nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
@@ -178,7 +180,8 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
         this.push(value);
       }, $scope.hardlist);
       nextPage = dataList.nextPage;
-        $scope.more = "more"
+      $scope.more = "more";
+      $scope.isListLoading = false;
     });
   };
   $scope.viewDetail = function(prodCode) {
