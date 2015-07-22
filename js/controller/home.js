@@ -138,6 +138,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
   $scope.isLoading = false;
   $scope.navbarCollapsed = true;
   $scope.hardlist = [];
+  $scope.more = "more";
   $scope.checkShow = function(price){
     if(price.krw <= 0 && price.availabilityMessage != 'Retired product') {
       return true;
@@ -169,6 +170,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
   };
   var nextPage = 0;
   $scope.getHardList = function(){
+    $scope.more = "Loading..."
     list.hardList(nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
       //$scope.hardlist = dataList.list;
@@ -176,6 +178,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
         this.push(value);
       }, $scope.hardlist);
       nextPage = dataList.nextPage;
+        $scope.more = "more"
     });
   };
   $scope.viewDetail = function(prodCode) {
