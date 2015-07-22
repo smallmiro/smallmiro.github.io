@@ -19,7 +19,7 @@
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
 
-		<script src="js/controller/home.js?20150722003"></script>
+		<script src="js/controller/home.js?20150722004"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<title>레고 공홈 가격비교</title>
 		<script>
@@ -95,7 +95,8 @@
 						<input type="text" class="form-control" placeholder="item number or Lego shop URL ex1) 75050 ex2) http://shop.lego.com/en-DE/B-Wing-75050" aria-describedby="basic-addon2" ng-model="shopUrl">
 						<span class="input-group-btn">
 							<div ng-activity-indicator="CircledWhite"></div>
-							<button class="btn btn-info" type="button" ng-click="getPrice()">Get Price!</button>
+							<button class="btn btn-info" type="button" ng-click="getPrice()" ng-disabled="isLoading">Get Price!</button>
+							<span class="label label-danger" ng-show="isLoading">Loading.....</span>
 						</span>
 					</div>
 				</p>
