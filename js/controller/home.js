@@ -155,6 +155,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
   };
   $scope.getPrice = function(){
     product.getProduct($scope.shopUrl, function(productInfo){
+      ga('send', 'event', 'button', 'click', 'get product', 1);
       var prodCode = productInfo.prodCode;
       product.getPrice(prodCode, function(prices){
         productInfo.prices = prices.price;
@@ -168,7 +169,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
   var nextPage = 0;
   $scope.getHardList = function(){
     list.hardList(nextPage , function(dataList){
-      console.debug(dataList);
+      ga('send', 'event', 'button', 'click', 'get list', 1);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
         this.push(value);
@@ -177,6 +178,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
     });
   };
   $scope.viewDetail = function(prodCode) {
+    ga('send', 'event', 'button', 'click', 'get detail', 1);
     $scope.shopUrl = prodCode;
     $scope.getPrice();
   }
