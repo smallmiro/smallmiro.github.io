@@ -158,6 +158,7 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
     $scope.isLoading = true;
     product.getProduct($scope.shopUrl, function(productInfo){
       var prodCode = productInfo.prodCode;
+      $window.scrollTo(0,0);
       product.getPrice(prodCode, function(prices){
         productInfo.prices = prices.price;
 
@@ -166,7 +167,6 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
         productInfo.avg = prices.avg;
         $scope.products = [productInfo];
         $scope.isLoading = false;
-        $window.scrollTo(0,0); 
       });
     });
   };
