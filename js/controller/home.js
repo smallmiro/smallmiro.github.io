@@ -128,7 +128,6 @@ mainHomeApp.factory('list', ['$http',  function($http) {
     hardList: function(page, callback) {
       var callurl = baseUrl + "/hard/list?page="+page;
       $http.get(callurl).success(function(data, status , header, config){
-            console.debug(status);
            callback(data);
       });
     }
