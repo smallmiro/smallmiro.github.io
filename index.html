@@ -159,8 +159,8 @@
 								 <tr class="active">
 									 <th class="text-center">국가</th>
 									 <th class="text-center">뱃지</th>
-									 <th class="text-center">구매가능수량</th>
 									 <th class="text-center">가격</th>
+									 <th class="text-center">구매가능수량</th>
 									 <th class="text-center">판매 메세지</th>
 									 <th></th>
 								 </tr>
@@ -171,8 +171,8 @@
 											</span>
 										</td>
 										<td class="text-left">{{price.badges}}</td>
-								 		<td class="text-right">{{price.buyLimit | number:0}} 개</td>
 								 		<td class="text-right">{{price.krw | number:0}} krw</td>
+								 		<td class="text-right">{{price.buyLimit | number:0}} 개</td>
 										<td class="text-left">{{price.availabilityMessage}}</td>
 										<td class="text-center"><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
 								 	</tr>
