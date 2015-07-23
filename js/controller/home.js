@@ -6,6 +6,7 @@ mainHomeApp.config(function($locationProvider) {
     enabled: true,
     requireBase: false
   });
+  $locationProvider.html5Mode(true).hashPrefix('!');
 });
 mainHomeApp.run(function($FB){
   $FB.init('401739753336740');
