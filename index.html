@@ -19,7 +19,7 @@
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
 
-		<script src="js/controller/home.js?20150723004"></script>
+		<script src="js/controller/home.js?20150723006"></script>
 		<script src="js/angular-socialshare.min.js"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/angular-socialshare.min.css" rel="stylesheet">
@@ -39,6 +39,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 	</head>
 	<body ng-controller="legoController" data-ng-init="getHardList()"  style="padding-top: 50px;padding-bottom: 20px;">
 	<script>
@@ -109,6 +110,7 @@
 					</center>
 				</p>
 				<p class="text-right">
+
 				</p>
 			</div>
 		</div>
@@ -127,6 +129,12 @@
 							      <img ng-src="{{product.image}}">
 							      <div class="caption">
 							        <h3>{{product.name}}</h3>
+											<p>
+<div facebook data-name='Fb Share' data-url='http://smallmiro.github.io/?prodcode={{product.prodCode}}' data-picture-url='{{product.image}}' data-caption='{{product.name}}' data-shares='shares'>
+<a href>Share To facebook<a>
+<p>Number of Shares: {{shares}}</p>
+</div>
+											</p>
 							        <p>상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
 							      </div>
 									</div>
