@@ -13,13 +13,11 @@ mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
     var message = price.availabilityMessage;
     if(price.saleStatus == "END") {
         return "danger"
-    } else if(message.indexOf("Out of stock") >=0 || message.indexOf("out of stock") >=0 || message == '일시품절' || message.indexOf("Call to check") >=0  || price.krw <= 0 || message.indexOf("불가능") >=0){
+    } else if(message.indexOf("Out of stock") >=0 || message.indexOf('Retired product') >=0 || message.indexOf("out of stock") >=0 || message == '일시품절' || message.indexOf("Call to check") >=0  || price.krw <= 0 || message.indexOf("불가능") >=0){
       return "warning"
     } else if(message.indexOf('Sold Out') >=0) {
         return "danger"
     } else if(message.indexOf('Coming Soon') >=0 || message.indexOf('출시예정') >=0) {
-        return "info"
-    } else if(message.indexOf('Retired product') >=0 ) {
         return "primary"
     } else {
       return "success"
