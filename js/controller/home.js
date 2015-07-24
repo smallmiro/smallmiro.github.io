@@ -156,7 +156,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       return false;
     }
   };
-  $scope.getPrice = function(event){
+  $scope.getPrice = function(){
     $scope.isLoading = true;
     product.getProduct($scope.shopUrl, function(productInfo){
       var prodCode = productInfo.prodCode;
@@ -169,7 +169,6 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         productInfo.avg = prices.avg;
         $scope.products = [productInfo];
         $scope.isLoading = false;
-        $event.target.
       });
     });
   };
@@ -188,10 +187,10 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.isListLoading = false;
     });
   };
-  $scope.viewDetail = function(prodCode, event) {
+  $scope.viewDetail = function(prodCode) {
     ga('send', 'event', 'button', 'click', 'get detail', prodCode);
     $scope.shopUrl = prodCode;
-    $scope.getPrice(event);
+    $scope.getPrice();
   }
   var prodCode = $location.search().prodcode;
   if(prodCode){
