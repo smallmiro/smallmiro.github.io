@@ -7,8 +7,11 @@ introApp.config(function($locationProvider) {
   });
 });
 
-introApp.controller('introController',  function($scope) {
+introApp.controller('introController',  function($scope, $document) {
 
   $scope.navbarCollapsed = true;
-
+  $scope.donate = function() {
+    ga('send', 'event', 'button', 'click', 'send donate', nextPage);
+    $document[0].getElementById("donateForm").submit();
+  }
 });

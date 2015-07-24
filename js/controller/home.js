@@ -136,7 +136,7 @@ mainHomeApp.factory('list', ['$http',  function($http) {
   };
 }]);
 
-mainHomeApp.controller('legoController',  function($scope, $http, $window, $location, product, list) {
+mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, product, list) {
   $scope.isLoading = false;
   $scope.isListLoading = false;
   $scope.navbarCollapsed = true;
@@ -195,5 +195,9 @@ mainHomeApp.controller('legoController',  function($scope, $http, $window, $loca
   var prodCode = $location.search().prodcode;
   if(prodCode){
     $scope.viewDetail(prodCode);
+  }
+  $scorpe.donate = function() {
+    ga('send', 'event', 'button', 'click', 'send donate', nextPage);
+    $document[0].getElementById("donateForm").submit();
   }
 });
