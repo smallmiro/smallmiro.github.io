@@ -1,4 +1,3 @@
-
 var introApp = angular.module('introApp', ['ui.bootstrap']);
 introApp.config(function($locationProvider) {
   $locationProvider.html5Mode({
@@ -7,7 +6,7 @@ introApp.config(function($locationProvider) {
   });
 });
 
-introApp.controller('introController',  function($scope) {
+introApp.controller('introController', function($scope) {
 
   $scope.navbarCollapsed = true;
 
