@@ -129,7 +129,7 @@
 							<!--
 							<script language="javascript" src="http://minishop.linkprice.com/autolink.php?a_id=A100528328&auto_id=5644&width=468&height=60&target=_blank"></script>
 						-->
-						<tenping class="adsbytenping" class="col-sm-12" tenping-ad-client="SfWOxCSwnxbm%2fcRAOTMdh06SBM8qLl7%2bfp0LGZpoFMILluNi7ZnXo%2f8g2kH8Fdwa" tenping-ad-type="CZAh6Dz83kfxX1Iv1NS%2f7w%3d%3d"></tenping><script async src='http://tenping.kr/scripts/adsbytenping.min.js' ></script>						
+						<tenping class="adsbytenping" class="col-sm-12" tenping-ad-client="SfWOxCSwnxbm%2fcRAOTMdh06SBM8qLl7%2bfp0LGZpoFMILluNi7ZnXo%2f8g2kH8Fdwa" tenping-ad-type="CZAh6Dz83kfxX1Iv1NS%2f7w%3d%3d"></tenping><script async src='http://tenping.kr/scripts/adsbytenping.min.js' ></script>
 						</div>
 
 					</div>
@@ -226,6 +226,9 @@
 									<blockquote>
 									 <p>카테고리 : {{product.category}}</p>
  									 <p>Item : {{product.prodCode}}</p>
+									 <p>
+										 <div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://www.getlego.me/?prodcode={{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
+									 </p>
 								 </blockquote>
 					        <p><a href="#" style="width:100%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격정보</a></p>
 					      </div>
