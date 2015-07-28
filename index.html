@@ -224,7 +224,7 @@
 									 <p>카테고리 : {{product.category}}</p>
  									 <p>Item : {{product.prodCode}}</p>
 								 </blockquote>
-					        <p><a href="#" style="width:100%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)">가격정보</a></p>
+					        <p><a href="#" style="width:100%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격정보</a></p>
 					      </div>
 					    </div>
 					  </div>
