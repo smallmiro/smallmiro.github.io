@@ -16,7 +16,9 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
   display: inline-block;
 }
-.facebookShare:hover .facebookButton .pluginButton, .facebookShare:active .facebookButton .pluginButton, .facebookShare:focus .facebookButton .pluginButton {
+.facebookShare:hover .facebookButton .pluginButton,
+.facebookShare:active .facebookButton .pluginButton,
+.facebookShare:focus .facebookButton .pluginButton {
   background: #5b7bd5;
   background: -moz-linear-gradient(top, #5b7bd5 0%, #4864b1 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5b7bd5), color-stop(100%, #4864b1));
@@ -24,7 +26,7 @@
   background: -o-linear-gradient(top, #5b7bd5 0%, #4864b1 100%);
   background: -ms-linear-gradient(top, #5b7bd5 0%, #4864b1 100%);
   background: linear-gradient(to bottom, #5b7bd5 0%, #4864b1 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#5b7bd5', endColorstr='#4864b1', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5b7bd5', endColorstr='#4864b1', GradientType=0);
   border-color: #5874c3 #4961a8 #41599f;
   box-shadow: inset 0 0 1px #607fd6;
 }
@@ -44,7 +46,7 @@
   background: -o-linear-gradient(top, #4c69ba 0%, #3b55a0 100%);
   background: -ms-linear-gradient(top, #4c69ba 0%, #3b55a0 100%);
   background: linear-gradient(to bottom, #4c69ba 0%, #3b55a0 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#4c69ba', endColorstr='#3b55a0', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c69ba', endColorstr='#3b55a0', GradientType=0);
   border: none;
   border-radius: 3px;
   color: #fff;
@@ -137,7 +139,8 @@
   width: 5px;
   z-index: 2;
 }
-.facebookShare .facebookCount .pluginCountButtonNub s, .facebookShare .facebookCount .pluginCountButtonNub i {
+.facebookShare .facebookCount .pluginCountButtonNub s,
+.facebookShare .facebookCount .pluginCountButtonNub i {
   border-color: transparent #bbb;
   border-style: solid;
   border-width: 4px 5px 4px 0;
@@ -169,7 +172,9 @@
   height: 20px;
   cursor: pointer;
 }
-.linkedinShare:hover .linkedinButton .pluginButtonLabel, .linkedinShare:active .linkedinButton .pluginButtonLabel, .linkedinShare:focus .linkedinButton .pluginButtonLabel {
+.linkedinShare:hover .linkedinButton .pluginButtonLabel,
+.linkedinShare:active .linkedinButton .pluginButtonLabel,
+.linkedinShare:focus .linkedinButton .pluginButtonLabel {
   border: 1px solid #000;
   border-top-color: #ABABAB;
   border-right-color: #9A9A9A;
@@ -183,7 +188,7 @@
   background: -o-linear-gradient(top, #ededed 0%, #dedede 100%);
   background: -ms-linear-gradient(top, #ededed 0%, #dedede 100%);
   background: linear-gradient(to bottom, #ededed 0%, #dedede 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dedede', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dedede', GradientType=0);
 }
 .linkedinShare .linkedinButton {
   display: inline-block;
@@ -238,7 +243,7 @@
   background: -o-linear-gradient(top, #fefefe 0%, #ececec 100%);
   background: -ms-linear-gradient(top, #fefefe 0%, #ececec 100%);
   background: linear-gradient(to bottom, #fefefe 0%, #ececec 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#ececec', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#ececec', GradientType=0);
 }
 .linkedinShare .linkedinButton .pluginButtonLabel span {
   color: #333;
