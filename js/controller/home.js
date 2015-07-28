@@ -177,10 +177,12 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         $scope.isLoading = false;
       }, function(data, status){
         ga('send', 'event', 'button', 'click', 'get search deatil error', productInfo.prodCode);
+        alert("조회 중 에러가 발생하였습니다.");
         $scope.isLoading = false;
       });
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get search meta error', $scope.shopUrl);
+      alert("조회 중 에러가 발생하였습니다.");
       $scope.isLoading = false;
     });
   };
@@ -200,6 +202,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.isListLoading = false;
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get list error', nextPage);
+      alert("조회 중 에러가 발생하였습니다.");
       $scope.isListLoading = false;
     });
   };
