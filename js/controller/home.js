@@ -107,18 +107,24 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
 mainHomeApp.factory('product', ['$http',  function($http) {
   var orders = [];
   return {
-    getPrice: function(priceCode, callback) {
+    getPrice: function(priceCode, callback, errorcallback) {
       var priceUrl = "/gonghome/price/" + priceCode + "";
       $http.get(baseUrl + priceUrl)
           .success(function(data){
               callback(data);
+          }).
+          error(function(data, status, headers, config) {
+            errorcallback(data, status);
           });
     },
-    getProduct: function(inputUrl, callback) {
+    getProduct: function(inputUrl, callback, errorcallback) {
       var callurl = baseUrl + "/gonghome/meta";
       $http.post(callurl ,  { url : inputUrl }, {headers: {'Content-Type': 'application/json;charset=UTF-8'}}
       ).success(function(data, status , header, config){
            callback(data);
+      }).
+      error(function(data, status, headers, config) {
+        errorcallback(data, status);
       });
     }
   };
@@ -169,10 +175,14 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         productInfo.avg = prices.avg;
         $scope.products = [productInfo];
         $scope.isLoading = false;
+      }, function(data, status, headers, config){
+        ga('send', 'event', 'button', 'click', 'get search error', productInfo.prodCode);
+        $scope.isLoading = false;
       });
     });
   };
   var nextPage = 0;
+
   $scope.getHardList = function(){
     $scope.isListLoading = true;
     $scope.more = "Loading..."
@@ -184,6 +194,9 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       }, $scope.hardlist);
       nextPage = dataList.nextPage;
       $scope.more = "more";
+      $scope.isListLoading = false;
+    }, function(data, status, headers, config){
+      ga('send', 'event', 'button', 'click', 'get list error', productInfo.prodCode);
       $scope.isListLoading = false;
     });
   };
