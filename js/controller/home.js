@@ -176,9 +176,12 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         $scope.products = [productInfo];
         $scope.isLoading = false;
       }, function(data, status){
-        ga('send', 'event', 'button', 'click', 'get search error', productInfo.prodCode);
+        ga('send', 'event', 'button', 'click', 'get search deatil error', productInfo.prodCode);
         $scope.isLoading = false;
       });
+    }, function(data, status){
+      ga('send', 'event', 'button', 'click', 'get search meta error', productInfo.prodCode);
+      $scope.isLoading = false;
     });
   };
   var nextPage = 0;
@@ -196,7 +199,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.more = "more";
       $scope.isListLoading = false;
     }, function(data, status){
-      ga('send', 'event', 'button', 'click', 'get list error', productInfo.prodCode);
+      ga('send', 'event', 'button', 'click', 'get list error', nextPage);
       $scope.isListLoading = false;
     });
   };
