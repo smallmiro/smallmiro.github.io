@@ -180,7 +180,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         $scope.isLoading = false;
       });
     }, function(data, status){
-      ga('send', 'event', 'button', 'click', 'get search meta error', productInfo.prodCode);
+      ga('send', 'event', 'button', 'click', 'get search meta error', $scope.shopUrl);
       $scope.isLoading = false;
     });
   };
