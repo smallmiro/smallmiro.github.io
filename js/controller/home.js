@@ -175,7 +175,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         productInfo.avg = prices.avg;
         $scope.products = [productInfo];
         $scope.isLoading = false;
-      }, function(data, status, headers, config){
+      }, function(data, status){
         ga('send', 'event', 'button', 'click', 'get search error', productInfo.prodCode);
         $scope.isLoading = false;
       });
@@ -195,7 +195,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       nextPage = dataList.nextPage;
       $scope.more = "more";
       $scope.isListLoading = false;
-    }, function(data, status, headers, config){
+    }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get list error', productInfo.prodCode);
       $scope.isListLoading = false;
     });
