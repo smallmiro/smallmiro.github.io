@@ -8,9 +8,6 @@ mainHomeApp.config(function($locationProvider) {
   });
   $locationProvider.html5Mode(true).hashPrefix('!');
 });
-mainHomeApp.run(function($FB){
-  $FB.init('401739753336740');
-});
 mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
 
@@ -130,19 +127,8 @@ mainHomeApp.factory('product', ['$http',  function($http) {
   };
 }]);
 
-mainHomeApp.factory('list', ['$http',  function($http) {
-  var orders = [];
-  return {
-    hardList: function(page, callback) {
-      var callurl = baseUrl + "/hard/list?page="+page;
-      $http.get(callurl).success(function(data, status , header, config){
-           callback(data);
-      });
-    }
-  };
-}]);
 
-mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, product, list) {
+mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, product) {
   $scope.isLoading = false;
   $scope.isListLoading = false;
   $scope.navbarCollapsed = true;
