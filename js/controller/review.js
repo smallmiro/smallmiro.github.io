@@ -1,6 +1,6 @@
 //var baseUrl = "http://127.0.0.1:8080";
 var baseUrl = "http://item.getlego.me";
-var mainHomeApp = angular.module('topApp', ['ui.bootstrap','chart.js']);
+var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 mainHomeApp.config(function($locationProvider) {
   $locationProvider.html5Mode({
     enabled: true,
@@ -178,10 +178,4 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     $document[0].getElementById("donateForm").submit();
   }
 
-  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-  $scope.series = ['Series A', 'Series B'];
-  $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90]
-  ];
 });
