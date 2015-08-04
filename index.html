@@ -24,6 +24,7 @@
 		<script src="js/angular-socialshare.min.js?20150728000"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/angular-socialshare.min.css?20150723007" rel="stylesheet">
+		<SCRIPT charset="utf-8" type="text/javascript" src="http://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Flegoprice-20%2F8005%2Fb517f193-e3c3-4f07-9767-e635f82e02c7"> </SCRIPT>
 		<title>레고 공홈 가격비교</title>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -153,8 +154,8 @@
 												<div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 											</p>
 							        <p>상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
-											<p ng-if="null != product.amazoneUrl">
-		 									 <button style="width:100%" class="btn btn-info" role="button" ng-click="viewAmazon(product)">아마존 구매</button>
+											<p ng-if="null != product.asin">
+		 									 <a type="amzn" asin="{{product.asin}}" style="width:100%" class="btn btn-info" role="button">아마존 구매</a>
 		 								 </p>
 							      </div>
 									</div>
@@ -232,12 +233,12 @@
 										 <div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 									 </p>
 								 </blockquote>
-								 <p ng-if="null != product.amazoneUrl">
+								 <p ng-if="null != product.asin">
 									 <button style="width:49%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
-									 <button style="width:49%" class="btn btn-info" role="button" ng-click="viewAmazon(product)">아마존 구매</button>
+									 <a type="amzn" asin="{{product.asin}}" style="width:49%" class="btn btn-info" role="button">아마존 구매</a>
 
 								 </p>
-								 <p ng-if="null == product.amazoneUrl">
+								 <p ng-if="null == product.asin">
 									 <button style="width:100%" class="btn btn-default" role="button " ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
 								 </p>
 					      </div>
