@@ -206,11 +206,17 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.isListLoading = false;
     });
   };
-  $scope.viewDetail = function(prodCode) {
+  $scope.viewDetail = function(product) {
     ga('send', 'event', 'button', 'click', 'get detail', prodCode);
     $scope.shopUrl = prodCode;
     $scope.getPrice();
   }
+  $scope.viewAmazon = function(product) {
+    ga('send', 'event', 'button', 'click', 'get amazon', product.prodCode);
+    
+    window.open(product.amazoneUrl,"amazon");
+  }
+
   var prodCode = $location.search().prodcode;
   if(prodCode){
     $scope.viewDetail(prodCode);
