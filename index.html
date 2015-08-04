@@ -155,7 +155,7 @@
 											</p>
 							        <p>상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
 											<p ng-if="null != product.asin">
-												<a asin="http://www.amazon.com/gp/product/{{product.asin}}?ie=UTF8&tag=legoprice-20&link_code=wql" target="_blank">
+												<a href="http://www.amazon.com/gp/product/{{product.asin}}?ie=UTF8&tag=legoprice-20&link_code=wql" target="_blank">
 		 										 <button style="width:100%" class="btn btn-info" role="button">아마존 구매</button>
 		 									 </a>
 		 								 </p>
@@ -237,7 +237,7 @@
 								 </blockquote>
 								 <p ng-if="null != product.asin">
 									 <button style="width:49%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
-									 <a asin="http://www.amazon.com/gp/product/{{product.asin}}?ie=UTF8&tag=legoprice-20&link_code=wql" target="_blank">
+									 <a href="http://www.amazon.com/gp/product/{{product.asin}}?ie=UTF8&tag=legoprice-20&link_code=wql" target="_blank">
 										 <button style="width:49%" class="btn btn-info" role="button">아마존 구매</button>
 									 </a>
 
