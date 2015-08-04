@@ -144,6 +144,11 @@
 
 											</p>
 							        <p>상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
+											<p ng-if="null != product.asin">
+												<a type="amzn" asin="{{product.asin}}">
+		 										 <button style="width:100%" class="btn btn-info" role="button">아마존 구매</button>
+		 									 </a>
+		 								 </p>											
 							      </div>
 									</div>
 									</div>
