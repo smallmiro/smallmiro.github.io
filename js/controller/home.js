@@ -219,4 +219,10 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     ga('send', 'event', 'button', 'click', 'send donate', nextPage);
     $document[0].getElementById("donateForm").submit();
   }
+
+  $scope.viewAmazon = function(product) {
+    ga('send', 'event', 'button', 'click', 'get amazon', product.prodCode);
+
+    $window.open(product.amazoneUrl,"amazon");
+  }
 });
