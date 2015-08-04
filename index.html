@@ -154,6 +154,14 @@
 												<div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 											</p>
 							        <p>상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
+											<p>
+												<blockquote>
+												 <p>평균 판매가 : {{product.avg| number:0}} krw</p>
+												 <p ng-if="'am-US' == price.country" ng-repeat="price in product.prices">
+													 아마존 판매가 : {{price.krw | number:0}} krw
+												 </p>
+											 </blockquote>
+											</p>
 											<p ng-if="null != product.asin">
 												<a href="http://www.amazon.com/gp/product/{{product.asin}}?ie=UTF8&tag=legoprice-20&link_code=wql" target="_blank">
 		 										 <button style="width:100%" class="btn btn-info" role="button">아마존 구매</button>
