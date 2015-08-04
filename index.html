@@ -193,14 +193,14 @@
 									 <th class="text-center">판매 메세지</th>
 									 <th></th>
 								 </tr>
-									 <tr ng-repeat="price in product.prices">
+									 <tr ng-repeat="price in product.prices" data-container="body" data-toggle="tooltip" data-placement="bottom" title="{{price.availabilityMessage}}">
 								 		<td class="text-center">
 											<span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}">
 												<img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}
 											</span>
 										</td>
 										<td class="text-left">{{price.badges}}</td>
-								 		<td class="text-right" data-toggle="tooltip" data-placement="bottom" title="{{price.availabilityMessage}}">{{price.krw | number:0}} krw</td>
+								 		<td class="text-right">{{price.krw | number:0}} krw</td>
 								 		<td class="text-right">{{price.buyLimit | number:0}} 개</td>
 										<td class="text-left">{{price.availabilityMessage}}</td>
 										<td class="text-center"><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
