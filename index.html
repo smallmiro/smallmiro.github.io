@@ -20,7 +20,7 @@
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
 
-		<script src="js/controller/home.js?20150728006"></script>
+		<script src="js/controller/home.js?20150804000"></script>
 		<script src="js/angular-socialshare.min.js?20150728000"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/angular-socialshare.min.css?20150723007" rel="stylesheet">
@@ -230,7 +230,13 @@
 										 <div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 									 </p>
 								 </blockquote>
-					        <p><a href="#" style="width:100%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격정보</a></p>
+								 <p ng-if="null != product.amazoneUrl">
+									 <button class="btn btn-default col-xs-12 col-sm-12 col-md-6" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
+									 <button class="btn btn-default col-xs-12 col-sm-12 col-md-6" role="button" ng-click="viewAmazon(product)">아마존 구매</button>
+								 </p>
+								 <p ng-if="null == product.amazoneUrl">
+									 <button style="width:100%" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
+								 </p>
 					      </div>
 					    </div>
 					  </div>
@@ -238,6 +244,8 @@
 					<div class="row" ng-hide="moreList(hardlist)">
 						  <div class="col-sm-12">
 								<button style="width:100%" type="button" class="btn btn-info" ng-click="getHardList()" ng-disabled="isListLoading">{{more}}</button>
+
+
 							</div>
 					</div>
 				</section>
