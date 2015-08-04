@@ -231,12 +231,12 @@
 									 </p>
 								 </blockquote>
 								 <p ng-if="null != product.amazoneUrl">
-									 <button style="width:50%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
-									 <button style="width:50%" class="btn btn-default" role="button" ng-click="viewAmazon(product)">아마존 구매</button>
+									 <button style="width:49%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
+									 <button style="width:49%" class="btn btn-default" role="button" ng-click="viewAmazon(product)">아마존 구매</button>
 
 								 </p>
 								 <p ng-if="null == product.amazoneUrl">
-									 <button style="width:100%" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
+									 <button style="width:100%" class="btn btn-default" role="button " ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
 								 </p>
 					      </div>
 					    </div>
