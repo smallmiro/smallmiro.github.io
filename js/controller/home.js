@@ -59,7 +59,7 @@ mainHomeApp.filter('countryName', ['$filter', function($filter) {
             case 'en-US' :
                     return "미국";
             case 'am-US' :
-                    return "미국-아마존";
+                    return "아마존";
             case 'ko-KR' :
                     return "대한민국";
             case 'en-BE' :
