@@ -200,6 +200,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     if(category != '') {
       category = "";
       nextPage = 0;
+      $scope.hardlist = [];
     }
     list.hardList(category, nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
@@ -240,6 +241,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     if(category != iCategory) {
       category = iCategory;
       nextPage = 0;
+      $scope.hardlist = [];
     }
     $scope.isListLoading = true;
     $scope.more = "Loading..."
