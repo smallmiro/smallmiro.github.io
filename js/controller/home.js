@@ -133,8 +133,14 @@ mainHomeApp.factory('product', ['$http',  function($http) {
 mainHomeApp.factory('list', ['$http',  function($http) {
   var orders = [];
   return {
-    hardList: function(page, callback) {
-      var callurl = baseUrl + "/hard/list?page="+page;
+    hardList: function(category, page, callback) {
+      var callurl;
+
+      if(category == '') {
+        callurl = baseUrl + "/hard/list?page="+page;
+      } else {
+        callurl = baseUrl + "/hard/list/" +category +"?page="+page;
+      }
       $http.get(callurl).success(function(data, status , header, config){
            callback(data);
       });
@@ -187,11 +193,57 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     });
   };
   var nextPage = 0;
-
+  var category = "";
   $scope.getHardList = function(){
     $scope.isListLoading = true;
     $scope.more = "Loading..."
-    list.hardList(nextPage , function(dataList){
+    if(category != '') {
+      category = "";
+      nextPage = 0;
+    }
+    list.hardList(category, nextPage , function(dataList){
+      ga('send', 'event', 'button', 'click', 'get list', nextPage);
+      //$scope.hardlist = dataList.list;
+      angular.forEach(dataList.list, function(value) {
+        this.push(value);
+      }, $scope.hardlist);
+      nextPage = dataList.nextPage;
+      $scope.more = "more";
+      $scope.isListLoading = false;
+    }, function(data, status){
+      ga('send', 'event', 'button', 'click', 'get list error', nextPage);
+      alert("조회 중 에러가 발생하였습니다.");
+      $scope.isListLoading = false;
+    });
+  };
+
+  $scope.getMoreList  = function(){
+    $scope.isListLoading = true;
+    $scope.more = "Loading..."
+    list.hardList(category, nextPage , function(dataList){
+      ga('send', 'event', 'button', 'click', 'get morelist', nextPage);
+      //$scope.hardlist = dataList.list;
+      angular.forEach(dataList.list, function(value) {
+        this.push(value);
+      }, $scope.hardlist);
+      nextPage = dataList.nextPage;
+      $scope.more = "more";
+      $scope.isListLoading = false;
+    }, function(data, status){
+      ga('send', 'event', 'button', 'click', 'get morelist error', nextPage);
+      alert("조회 중 에러가 발생하였습니다.");
+      $scope.isListLoading = false;
+    });
+  };
+
+  $scope.getCategoryList = function(iCategory){
+    if(category != iCategory) {
+      category = iCategory;
+      nextPage = 0;
+    }
+    $scope.isListLoading = true;
+    $scope.more = "Loading..."
+    list.hardList(category, nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
