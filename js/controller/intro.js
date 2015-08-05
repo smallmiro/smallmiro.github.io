@@ -14,4 +14,7 @@ introApp.controller('introController',  function($scope, $document) {
     ga('send', 'event', 'button', 'click', 'send donate', nextPage);
     $document[0].getElementById("donateForm").submit();
   }
+  $scope.alertMe = function(a) {
+    alert("click " + a );
+  }
 });
