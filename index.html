@@ -157,14 +157,12 @@
 											<p>
 												<blockquote>
 												 <p>
-													 <span class="label label-primary col-md-12">
+
 													 공식홈 : {{product.avg| number:0}} krw
-													 </span>
+
 												 </p>
 												 <p ng-if="'am-US' == price.country || 'ko-KR' == price.country" ng-repeat="price in product.prices">
-													 <span class="label label-{{price | prodStatus}}  col-md-12" alt="{{price.availabilityMessage}}">
 													 {{price.country | countryName}} : {{price.krw | number:0}} krw
-												 	 </span>
 												 </p>
 											 </blockquote>
 											</p>
