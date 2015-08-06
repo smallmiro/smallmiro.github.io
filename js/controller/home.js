@@ -229,6 +229,8 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     $scope.isListLoading = true;
     $scope.more = "Loading..."
     list.hardList(category, subCategory, nextPage , function(dataList){
+
+		  ga('send', 'pageview');
       ga('send', 'event', 'button', 'click', 'get morelist', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
@@ -261,6 +263,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     $scope.more = "Loading..."
     list.hardList(category, subCategory, nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
+		  ga('send', 'pageview');
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
         this.push(value);
@@ -275,16 +278,11 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     });
   };
   $scope.viewDetail = function(prodCode) {
+  ga('send', 'pageview');
     ga('send', 'event', 'button', 'click', 'get detail', prodCode);
     $scope.shopUrl = prodCode;
     $scope.getPrice();
   }
-  $scope.viewAmazon = function(product) {
-    ga('send', 'event', 'button', 'click', 'get amazon', product.prodCode);
-
-    window.open(product.amazoneUrl,"amazon");
-  }
-
   var prodCode = $location.search().prodcode;
   if(prodCode){
     $scope.viewDetail(prodCode);
