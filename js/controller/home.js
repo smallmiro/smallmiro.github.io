@@ -133,13 +133,18 @@ mainHomeApp.factory('product', ['$http',  function($http) {
 mainHomeApp.factory('list', ['$http',  function($http) {
   var orders = [];
   return {
-    hardList: function(category, page, callback) {
+    hardList: function(category, subCategory, page, callback) {
       var callurl;
 
       if(category == '') {
         callurl = baseUrl + "/hard/list?page="+page;
       } else {
-        callurl = baseUrl + "/hard/list/" +category +"?page="+page;
+        if(subCategory == '') {
+          callurl = baseUrl + "/hard/list/" +category +"?page="+page;
+        } else {
+          callurl = baseUrl + "/hard/list/" +category +"/" + subCategory +"?page="+page;
+        }
+
       }
       $http.get(callurl).success(function(data, status , header, config){
            callback(data);
@@ -194,15 +199,17 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   };
   var nextPage = 0;
   var category = "";
+  var subCategory = "";
   $scope.getHardList = function(){
     $scope.isListLoading = true;
     $scope.more = "Loading..."
     if(category != '') {
       category = "";
+      subCategory = "";
       nextPage = 0;
       $scope.hardlist = [];
     }
-    list.hardList(category, nextPage , function(dataList){
+    list.hardList(category, subCategory, nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
@@ -221,7 +228,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   $scope.getMoreList  = function(){
     $scope.isListLoading = true;
     $scope.more = "Loading..."
-    list.hardList(category, nextPage , function(dataList){
+    list.hardList(category, subCategory, nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get morelist', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
@@ -237,7 +244,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     });
   };
 
-  $scope.getCategoryList = function(iCategory){
+  $scope.getCategoryList = function(iCategory, iSubCategory){
     if(category != iCategory) {
       category = iCategory;
       nextPage = 0;
@@ -245,7 +252,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     }
     $scope.isListLoading = true;
     $scope.more = "Loading..."
-    list.hardList(category, nextPage , function(dataList){
+    list.hardList(category, subCategory, nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
