@@ -247,6 +247,13 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   $scope.getCategoryList = function(iCategory, iSubCategory){
     if(category != iCategory) {
       category = iCategory;
+      subCategory = iSubCategory;
+      nextPage = 0;
+      $scope.hardlist = [];
+    }
+    if(subCategory != iSubCategory) {
+      category = iCategory;
+      subCategory = iSubCategory;
       nextPage = 0;
       $scope.hardlist = [];
     }
