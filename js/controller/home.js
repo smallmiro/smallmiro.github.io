@@ -109,6 +109,10 @@ mainHomeApp.factory('product', ['$http',  function($http) {
   return {
     getPrice: function(priceCode, callback, errorcallback) {
       var priceUrl = "/gonghome/price/" + priceCode + "";
+      ga('send', 'pageview', {
+        'page': priceUrl,
+        'title': 'getPrice'
+      });
       $http.get(baseUrl + priceUrl)
           .success(function(data){
               callback(data);
@@ -119,6 +123,10 @@ mainHomeApp.factory('product', ['$http',  function($http) {
     },
     getProduct: function(inputUrl, callback, errorcallback) {
       var callurl = baseUrl + "/gonghome/meta";
+      ga('send', 'pageview', {
+        'page': "/gonghome/meta/" + inputUrl,
+        'title': 'getProduct'
+      });
       $http.post(callurl ,  { url : inputUrl }, {headers: {'Content-Type': 'application/json;charset=UTF-8'}}
       ).success(function(data, status , header, config){
            callback(data);
@@ -137,15 +145,20 @@ mainHomeApp.factory('list', ['$http',  function($http) {
       var callurl;
 
       if(category == '') {
-        callurl = baseUrl + "/hard/list?page="+page;
+        callurl = "/hard/list?page="+page;
       } else {
         if(subCategory == '') {
-          callurl = baseUrl + "/hard/list/" +category +"?page="+page;
+          callurl = "/hard/list/" +category +"?page="+page;
         } else {
-          callurl = baseUrl + "/hard/list/" +category +"/" + subCategory +"?page="+page;
+          callurl = "/hard/list/" +category +"/" + subCategory +"?page="+page;
         }
 
       }
+      ga('send', 'pageview', {
+        'page': callurl,
+        'title': 'getProduct'
+      });
+      callurl = baseUrl + callurl
       $http.get(callurl).success(function(data, status , header, config){
            callback(data);
       });
@@ -210,7 +223,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.hardlist = [];
     }
     list.hardList(category, subCategory, nextPage , function(dataList){
-    	ga('send', 'pageview');
+
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
@@ -231,7 +244,6 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     $scope.more = "Loading..."
     list.hardList(category, subCategory, nextPage , function(dataList){
 
-		  ga('send', 'pageview');
       ga('send', 'event', 'button', 'click', 'get morelist', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
@@ -264,7 +276,6 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     $scope.more = "Loading..."
     list.hardList(category, subCategory, nextPage , function(dataList){
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
-		  ga('send', 'pageview');
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
         this.push(value);
@@ -279,7 +290,6 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     });
   };
   $scope.viewDetail = function(prodCode) {
-  ga('send', 'pageview');
     ga('send', 'event', 'button', 'click', 'get detail', prodCode);
     $scope.shopUrl = prodCode;
     $scope.getPrice();
@@ -290,13 +300,20 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     $scope.viewDetail(prodCode);
   }
   $scope.donate = function() {
+    ga('send', 'pageview', {
+      'page': "paypal",
+      'title': 'donate'
+    });
     ga('send', 'event', 'button', 'click', 'send donate', nextPage);
     $document[0].getElementById("donateForm").submit();
   }
 
   $scope.viewAmazon = function(product) {
     ga('send', 'event', 'button', 'click', 'get amazon', product.prodCode);
-
+    ga('send', 'pageview', {
+      'page': product.amazoneUrl ,
+      'title': 'amazon'
+    });
     $window.open(product.amazoneUrl,"amazon");
   }
 });
