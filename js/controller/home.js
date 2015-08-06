@@ -156,7 +156,7 @@ mainHomeApp.factory('list', ['$http',  function($http) {
       }
       ga('send', 'pageview', {
         'page': callurl,
-        'title': 'getProduct'
+        'title': category + "/" + subCategory
       });
       callurl = baseUrl + callurl
       $http.get(callurl).success(function(data, status , header, config){
