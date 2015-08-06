@@ -210,6 +210,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.hardlist = [];
     }
     list.hardList(category, subCategory, nextPage , function(dataList){
+    	ga('send', 'pageview');
       ga('send', 'event', 'button', 'click', 'get list', nextPage);
       //$scope.hardlist = dataList.list;
       angular.forEach(dataList.list, function(value) {
@@ -283,6 +284,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     $scope.shopUrl = prodCode;
     $scope.getPrice();
   }
+
   var prodCode = $location.search().prodcode;
   if(prodCode){
     $scope.viewDetail(prodCode);
