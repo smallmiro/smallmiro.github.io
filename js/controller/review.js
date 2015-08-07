@@ -1,6 +1,6 @@
 //var baseUrl = "http://127.0.0.1:8080";
-//var baseUrl = "http://item.getlego.me";
-var baseUrl = "http://ec2-54-173-63-112.compute-1.amazonaws.com";
+var baseUrl = "http://item.getlego.me";
+//var baseUrl = "http://ec2-54-173-63-112.compute-1.amazonaws.com";
 var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
 mainHomeApp.config(function($locationProvider) {
   $locationProvider.html5Mode({
