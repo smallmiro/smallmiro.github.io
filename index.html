@@ -264,9 +264,9 @@
 										 <div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 									 </p>
 									 <p>
-										 <span ng-if="product.priceModel.average > 0" class="label label-success col-md-4">{{product.priceModel.average | number:0}}</span>
-										 <span ng-if="product.priceModel.amazonPrice > 0" class="label label-primary col-md-4">{{product.priceModel.amazonPrice | number:0}}</span>
-										 <span ng-if="product.priceModel.koreaPrice > 0" class="label label-warning col-md-4">{{product.priceModel.koreaPrice | number:0}}</span>
+										 <span ng-if="product.priceModel.average > 0" class="label label-success col-xs-12 col-sm-4 col-md-4">{{product.priceModel.average | number:0}}krw</span>
+										 <span ng-if="product.priceModel.amazonPrice > 0" class="label label-primary col-xs-12 col-sm-4 col-md-4">{{product.priceModel.amazonPrice | number:0}}krw</span>
+										 <span ng-if="product.priceModel.koreaPrice > 0" class="label label-warning col-xs-12 col-sm-4 col-md-4">{{product.priceModel.koreaPrice | number:0}}krw</span>
 									 </p>
 								 </blockquote>
 								 <p ng-if="null != product.asin">
