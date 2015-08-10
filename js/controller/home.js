@@ -33,7 +33,11 @@ mainHomeApp.filter('maxPrice', ['$filter', function($filter) {
   return function(price, price2, price3) {
 
     if(price < price2 && price < price3 && price > 0) {
-        return "success"
+        return "info"
+    } else if(price < price2 && price > 0 && price3 == 0) {
+        return "info"
+    } else if(price < price3 && price > 0 && price2 == 0) {
+        return "info"
     } else {
       return "";
     }
