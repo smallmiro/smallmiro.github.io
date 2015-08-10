@@ -32,7 +32,7 @@ mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
 mainHomeApp.filter('maxPrice', ['$filter', function($filter) {
   return function(price, price2, price3) {
 
-    if(price > price2 && price > price3 && price > 0) {
+    if(price < price2 && price < price3 && price > 0) {
         return "success"
     } else {
       return "";
