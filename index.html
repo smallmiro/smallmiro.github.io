@@ -263,6 +263,11 @@
 									 <p>
 										 <div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 									 </p>
+									 <p>
+										 <span ng-if="product.priceModel.average > 0" class="label label-success">{{product.priceModel.average}}</span>
+										 <span ng-if="product.priceModel.average > 0" class="label label-primary">{{product.priceModel.amazonPrice}}</span>
+										 <span ng-if="product.priceModel.average > 0" class="label label-warning">{{product.priceModel.koreaPrice}}</span>
+									 </p>
 								 </blockquote>
 								 <p ng-if="null != product.asin">
 									 <button style="width:49%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
