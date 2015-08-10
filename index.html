@@ -165,8 +165,21 @@
 													 공식홈 : {{product.avg| number:0}} krw
 
 												 </p>
-												 <p ng-if="'am-US' == price.country || 'ko-KR' == price.country" ng-repeat="price in product.prices">
-													 {{price.country | countryName}} : {{price.krw | number:0}} krw
+												 <p>
+													 <table class="table table-condensed">
+														 <tr class="{{product.priceModel.average | maxPrice: product.priceModel.amazonPrice:product.priceModel.koreaPrice}}">
+															 <td class="text-center">평균</td>
+															 <td class="text-right">{{product.priceModel.average | number:0}} krw</td>
+														 </tr>
+														 <tr class="{{product.priceModel.amazonPrice | maxPrice: product.priceModel.average:product.priceModel.koreaPrice}}">
+															 <td class="text-center">아마존</td>
+															 <td class="text-right">{{product.priceModel.amazonPrice | number:0}} krw</td>
+														 </tr>
+														 <tr class="{{product.priceModel.koreaPrice | maxPrice: product.priceModel.amazonPrice:product.priceModel.average}}">
+															 <td class="text-center">한국</td>
+															 <td class="text-right">{{product.priceModel.koreaPrice | number:0}} krw</td>
+														 </tr>
+													 </table>													 
 												 </p>
 											 </blockquote>
 											</p>
