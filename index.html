@@ -264,10 +264,21 @@
 										 <div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 									 </p>
 									 <p>
-										 <span ng-if="product.priceModel.average > 0" class="label label-success col-xs-12 col-sm-4 col-md-4">{{product.priceModel.average | number:0}}krw</span>
-										 <span ng-if="product.priceModel.amazonPrice > 0" class="label label-primary col-xs-12 col-sm-4 col-md-4">{{product.priceModel.amazonPrice | number:0}}krw</span>
-										 <span ng-if="product.priceModel.koreaPrice > 0" class="label label-warning col-xs-12 col-sm-4 col-md-4">{{product.priceModel.koreaPrice | number:0}}krw</span>
-									 </p>
+										 <table class="table  table-striped">
+											 <tr ng-if="product.priceModel.average > 0">
+												 <td class="text-center">평균</td>
+												 <td class="text-right">{{product.priceModel.average | number:0}} krw</td>
+											 </tr>
+											 <tr ng-if="product.priceModel.amazonPrice > 0">
+												 <td class="text-center">아마존</td>
+												 <td class="text-right">{{product.priceModel.amazonPrice | number:0}} krw</td>
+											 </tr>
+											 <tr ng-if="product.priceModel.koreaPrice > 0">
+												 <td class="text-center">한국</td>
+												 <td class="text-right">{{product.priceModel.koreaPrice | number:0}} krw</td>
+											 </tr>
+										 </table>
+									</p>
 								 </blockquote>
 								 <p ng-if="null != product.asin">
 									 <button style="width:49%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
