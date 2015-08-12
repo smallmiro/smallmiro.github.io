@@ -156,7 +156,7 @@
 				<section id="search_content" class="inner" ng-show="isCollapsed">
 					<div class="row" ng-repeat="product in products">
 
-					  <div class="col-sm-6 col-md-4">
+					  <div class="col-sm-12 col-md-4">
 								<div class="panel panel-default">
 								<div class="panel-heading"><img ng-src="{{product.categoryImage}}"></div>
 								<div class="panel-body">
@@ -206,7 +206,7 @@
 									</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-8">
+						<div class="col-sm-12 col-md-8">
 							<div class="panel panel-default">
 							<!-- Default panel contents -->
 						   <div class="panel-heading">
@@ -231,11 +231,11 @@
 							 <div class="table-responsive">
 						   <table class="table  table-striped">
 								 <tr class="active">
-									 <th class="text-center" style="width=100px">국가</th>
-									 <th class="text-center" style="width=100px">뱃지</th>
-									 <th class="text-center" style="width=100px">가격</th>
-									 <th class="text-center">구매가능수량</th>
-									 <th class="text-center" style="width=300px">판매 메세지</th>
+									 <th class="text-center">국가</th>
+									 <th class="text-center">뱃지</th>
+									 <th class="text-center">가격</th>
+									 <th class="text-center">수량</th>
+									 <th class="text-center">판매 메세지</th>
 									 <th></th>
 								 </tr>
 									 <tr ng-if="'am-US' != price.country" ng-repeat="price in product.prices" data-container="body" data-toggle="tooltip" data-placement="bottom" title="{{price.availabilityMessage}}">
@@ -244,10 +244,10 @@
 												<img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}
 											</span>
 										</td>
-										<td class="text-left">{{price.badges}}</td>
-								 		<td class="text-right">{{price.krw | number:0}} krw</td>
+										<td class="text-left" style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;width:100px;">{{price.badges}}</td>
+								 		<td class="text-right" style="width:100px">{{price.krw | number:0}} krw</td>
 								 		<td class="text-right">{{price.buyLimit | number:0}} 개</td>
-										<td class="text-left">{{price.availabilityMessage}}</td>
+										<td class="text-left" style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;width:300px;">{{price.availabilityMessage}}</td>
 										<td class="text-center"><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
 								 	</tr>
 								 	<tr class="info">
