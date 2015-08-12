@@ -186,6 +186,7 @@
 											<p ng-if="null != product.asin">
 												<a href="http://www.amazon.com/gp/product/{{product.asin}}?ie=UTF8&tag=legospriccomp-20&link_code=wql" target="_blank">
 		 										 <button style="width:100%" class="btn btn-info" role="button">아마존 구매</button>
+												 <img src="http://ir-na.amazon-adsystem.com/e/ir?t=legospriccomp-20&l=as2&o=1&a={{product.asin}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 		 									 </a>
 		 								 </p>
 							      </div>
@@ -298,6 +299,7 @@
 									 <button style="width:49%" class="btn btn-default" role="button" ng-click="viewDetail(product.prodCode)" ng-disabled="isLoading">가격 정보</button>
 									 <a href="http://www.amazon.com/gp/product/{{product.asin}}?ie=UTF8&tag=legospriccomp-20&link_code=wql" target="_blank">
 										 <button style="width:49%" class="btn btn-info" role="button">아마존 구매</button>
+										 <img src="http://ir-na.amazon-adsystem.com/e/ir?t=legospriccomp-20&l=as2&o=1&a={{product.asin}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 									 </a>
 
 								 </p>
