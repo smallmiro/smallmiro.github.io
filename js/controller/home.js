@@ -337,4 +337,9 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   $scope.closeDetail = function(){
     $scope.isCollapsed = false;
   }
+
+
+  $scope.clickAdd = function(){
+    $window.open("http://www.amazon.com/gp/product/1593276133/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1593276133&linkCode=as2&tag=legospriccomp-20&linkId=QW2MTGQJ4TWZHRNG","amazon");
+  }
 });
