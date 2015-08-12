@@ -143,6 +143,11 @@
 			<!-- MAIN CONTENT -->
 			<div id="main_content_wrap" class="outer">
 				<section id="search_content" class="inner" ng-show="isCollapsed">
+					<div class="col-md-12 text-right">
+						<button type="button" class="btn btn-default" ng-click="closeDetail()">close</button>
+					</div>
+				</section>
+				<section id="search_content" class="inner" ng-show="isCollapsed">
 					<div class="row" ng-repeat="product in products">
 
 					  <div class="col-sm-6 col-md-4">
@@ -199,7 +204,7 @@
 							<div class="panel panel-default">
 							<!-- Default panel contents -->
 						   <div class="panel-heading">
-								 <h4><span class="label label-info">{{product.badgeName}}</span> 가격 및 상태 정보 <button type="button" class="btn btn-default" ng-click="closeDetail()">close</button></h4>
+								 <h4><span class="label label-info">{{product.badgeName}}</span> 가격 및 상태 정보</h4>
 							 </div>
 						   <div class="panel-body">
 								   <div class="row">
