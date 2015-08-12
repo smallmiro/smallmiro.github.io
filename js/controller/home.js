@@ -334,4 +334,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     });
     $window.open(product.amazoneUrl,"amazon");
   }
+  $scope.closeDetail = function(){
+    $scope.isCollapsed = false;
+  }
 });
