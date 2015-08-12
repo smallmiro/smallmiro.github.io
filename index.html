@@ -20,7 +20,7 @@
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
 
-		<script src="js/controller/home.js?20150810003"></script>
+		<script src="js/controller/home.js?20150812000"></script>
 		<script src="js/angular-socialshare.min.js?20150728004"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/angular-socialshare.min.css?20150723007" rel="stylesheet">
@@ -142,7 +142,7 @@
 			</div>
 			<!-- MAIN CONTENT -->
 			<div id="main_content_wrap" class="outer">
-				<section id="search_content" class="inner">
+				<section id="search_content" class="inner" collapse="isCollapsed">
 					<div class="row" ng-repeat="product in products">
 
 					  <div class="col-sm-6 col-md-4">
@@ -199,7 +199,7 @@
 							<div class="panel panel-default">
 							<!-- Default panel contents -->
 						   <div class="panel-heading">
-								 <h4><span class="label label-info">{{product.badgeName}}</span> 가격 및 상태 정보 </h4>
+								 <h4><span class="label label-info">{{product.badgeName}}</span> 가격 및 상태 정보 <button type="button" class="btn btn-default" ng-click="!isCollapsed">close</button></h4>
 							 </div>
 						   <div class="panel-body">
 								   <div class="row">

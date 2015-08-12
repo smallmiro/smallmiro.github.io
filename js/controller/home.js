@@ -188,6 +188,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   $scope.navbarCollapsed = true;
   $scope.hardlist = [];
   $scope.more = "more";
+  $scope.isCollapsed = false;
   $scope.checkShow = function(price){
     if(price.krw <= 0 && price.availabilityMessage != 'Retired product') {
       return true;
@@ -215,6 +216,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         productInfo.avg = prices.avg;
         $scope.products = [productInfo];
         $scope.isLoading = false;
+        $scope.isCollapsed = true;
       }, function(data, status){
         ga('send', 'event', 'button', 'click', 'get search deatil error', productInfo.prodCode);
         alert("조회 중 에러가 발생하였습니다.");
