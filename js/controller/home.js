@@ -11,6 +11,16 @@ mainHomeApp.config(function($locationProvider) {
 mainHomeApp.run(function($FB){
   $FB.init('401739753336740');
 });
+mainHomeApp.directive('errorSrc', function () {
+    var errorSrc = {
+        link: function postLink(scope, iElement, iAttrs) {
+            iElement.bind('error', function() {
+                angular.element(this).attr("src", iAttrs.fallbackSrc);
+            });
+        }
+    }
+    return errorSrc;
+});
 mainHomeApp.filter('prodStatus', ['$filter', function($filter) {
   return function(price) {
 
