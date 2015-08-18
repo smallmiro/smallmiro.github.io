@@ -43,9 +43,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-		<style>
-		body { font-family:"Museo Slab",Rockwell,Courier,sans-serif }
-		</style>
+
 	</head>
 	<body ng-controller="legoController" style="padding-top: 50px;padding-bottom: 20px;">
 	<script>
@@ -167,7 +165,7 @@
 							      <img ng-if="null == product.asin" ng-src="{{product.image}}">
 										<img ng-if="null != product.asin" error-src="{{product.image}}" ng-src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={{product.asin}}&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=legospriccomp-20">
 							      <div class="caption">
-							        <h3>{{product.name}}</h3>
+							        <h3 style="font-family:"Museo Slab",Rockwell,Courier,sans-serif">{{product.name}}</h3>
 											<p>
 												<div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
 											</p>
@@ -283,7 +281,7 @@
 								<img style="height:263px;" ng-if="null != product.asin" error-src="{{product.image}}" ng-src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={{product.asin}}&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=legospriccomp-20">
 								<div class="caption" style="height:370px;">
 
-					        <h4>{{product.name}}</h4>
+					        <h4  style="font-family:"Museo Slab",Rockwell,Courier,sans-serif">{{product.name}}</h4>
 									<blockquote>
  									 <p>Item : {{product.prodCode}}</p>
 									 <p><h6>http://item.getlego.me/detail/{{product.prodCode}}</h6></p>
