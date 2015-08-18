@@ -158,6 +158,16 @@ mainHomeApp.factory('product', ['$http',  function($http) {
       error(function(data, status, headers, config) {
         errorcallback(data, status);
       });
+    },
+    getAd: function(callback, errorcallback) {
+      var callurl = "/data/ad.json";
+      $http.get(callurl)
+          .success(function(data){
+              callback(data);
+          }).
+          error(function(data, status, headers, config) {
+            errorcallback(data, status);
+          });
     }
   };
 }]);
@@ -192,7 +202,7 @@ mainHomeApp.factory('list', ['$http',  function($http) {
   };
 }]);
 
-mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, product, list) {
+mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, $log, product, list) {
   $scope.isLoading = false;
   $scope.isListLoading = false;
   $scope.navbarCollapsed = true;
@@ -352,4 +362,11 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   $scope.clickAdd = function(){
     $window.open("http://www.amazon.com/gp/product/1593276133/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1593276133&linkCode=as2&tag=legospriccomp-20&linkId=QW2MTGQJ4TWZHRNG","amazon");
   }
+
+  product.getAd(function(adInfo){
+    $log.log(adInfo[0].title);
+  }, function(data, status){
+    alert("조회 중 에러가 발생하였습니다.");
+    $scope.isListLoading = false;
+  });
 });
