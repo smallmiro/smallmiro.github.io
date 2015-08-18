@@ -160,7 +160,7 @@ mainHomeApp.factory('product', ['$http',  function($http) {
       });
     },
     getAd: function(callback, errorcallback) {
-      var callurl = "/data/ad.json";
+      var callurl = "/data/ad.json?2015081300";
       $http.get(callurl)
           .success(function(data){
               callback(data);
@@ -364,7 +364,16 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   }
 
   product.getAd(function(adInfo){
-    $log.log(adInfo[0].title);
+    var arSize = adInfo.length - 1;
+    var idx = Math.floor( (Math.random() * (arSize - 0 + 1)) + 0 );
+    $scope.title = adInfo[idx].title;
+    $scope.smallTitle = adInfo[idx].smallTitle;
+    $scope.link = adInfo[idx].link;
+    $scope.img = adInfo[idx].img;
+    $scope.price = adInfo[idx].price;
+    $scope.uvImage = adInfo[idx].uvImage;
+    $scope.desc = adInfo[idx].desc;
+
   }, function(data, status){
     alert("조회 중 에러가 발생하였습니다.");
     $scope.isListLoading = false;
