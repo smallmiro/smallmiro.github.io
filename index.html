@@ -20,7 +20,7 @@
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
 
-		<script src="js/controller/home.js?20150819000"></script>
+		<script src="js/controller/home.js?20150819001"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<!--
 		<script src="js/angular-socialshare.min.js?20150728005"></script>
@@ -127,12 +127,10 @@
 			</div>
 		</div>
 		<div class="container" style="padding-bottom: 20px">
-			<div id="add_content_wrap" class="outer" style="padding-bottom: 20px;cursor: pointer;border: 1px solid #eee; border-radius: 5px;" ng-click="clickAdd()">
+			<div id="add_content_wrap" class="outer" style="padding-bottom: 20px;cursor: pointer;border: 1px solid #eee; border-radius: 5px;" ng-click="clickAdd(''{{ link }}'')">
 				<div class="row">
 				  <div class="col-xs-4 col-md-2 text-center" style="padding-top: 10px;padding-bottom: 10px;">
-				      <a href="{{ link }}">
-				        <img border="0" ng-src="{{ img }}" >
-				      </a>
+				      <img border="0" ng-src="{{ img }}" >
 							<span class="label label-info">{{ price }}</span>
 				      <img ng-src="{{uvImage}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 				  </div>
