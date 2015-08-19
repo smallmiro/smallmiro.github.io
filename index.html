@@ -111,7 +111,7 @@
 				</header>
 				<p class="text-center">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="item number or Lego shop URL ex1) 75050 ex2) http://shop.lego.com/en-DE/B-Wing-75050" aria-describedby="basic-addon2" ng-model="shopUrl">
+						<input type="text" class="form-control" placeholder="item number or Lego shop URL ex1) 75050 ex2) http://shop.lego.com/en-DE/B-Wing-75050" aria-describedby="basic-addon2" ng-model="shopUrl" ng-keyup="$event.keyCode == 13 && getPrice()">
 						<span class="input-group-btn">
 							<div ng-activity-indicator="CircledWhite"></div>
 							<button class="btn btn-info" type="button" ng-click="getPrice()" ng-disabled="isLoading">Get Price!</button>
