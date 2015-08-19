@@ -20,11 +20,12 @@
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
 
-		<script src="js/controller/home.js?20150813002"></script>
-		<script src="js/angular-socialshare.min.js?20150728005"></script>
+		<script src="js/controller/home.js?20150814000"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<!--
+		<script src="js/angular-socialshare.min.js?20150728005"></script>
 		<link href="css/angular-socialshare.min.css?20150723007" rel="stylesheet">
-
+		-->
 		<SCRIPT charset="utf-8" type="text/javascript" src="http://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Flegospriccomp-20%2F8005%2Fcf8f905a-be42-4cb9-b7c4-a9cb72cf4832"> </SCRIPT>
 
 		<title>레고 공홈 가격비교 - 20150813001</title>
@@ -220,6 +221,7 @@
 								     <div class="col-sm-4">
 								       <!--Body content-->
 											 <!--div class="fb-share-button" data-href="http://smallmiro.github.io/?prodcode={{product.prodCode}}" data-layout="box_count"></div-->
+											 <div class="fb-share-button" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="box_count"></div>
 								     </div>
 								   </div>
 
@@ -288,7 +290,10 @@
  									 <p>Item : {{product.prodCode}}</p>
 									 <p><h6>http://item.getlego.me/detail/{{product.prodCode}}</h6></p>
 									 <p>
+										 <!--
 										 <div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
+									 		-->
+										 <div class="fb-share-button" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="box_count"></div>
 									 </p>
 									 <p>
 										 <table class="table table-condensed">
