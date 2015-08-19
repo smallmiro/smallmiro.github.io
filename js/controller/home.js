@@ -8,9 +8,6 @@ mainHomeApp.config(function($locationProvider) {
   });
   $locationProvider.html5Mode(true).hashPrefix('!');
 });
-mainHomeApp.run(function($FB){
-  $FB.init('401739753336740');
-});
 mainHomeApp.directive('errorSrc', function () {
     var errorSrc = {
         link: function postLink(scope, iElement, iAttrs) {
