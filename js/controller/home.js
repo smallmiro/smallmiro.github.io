@@ -206,6 +206,11 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   $scope.hardlist = [];
   $scope.more = "more";
   $scope.isCollapsed = false;
+
+  $scope.FBParse = function(price){
+    FB.XFBML.parse();
+    $log.log("FBParse");
+  };
   $scope.checkShow = function(price){
     if(price.krw <= 0 && price.availabilityMessage != 'Retired product') {
       return true;
@@ -235,7 +240,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         $scope.isLoading = false;
         $scope.isCollapsed = true;
 
-        $timeout(FB.XFBML.parse(), 3000);
+        $timeout($scope.FBParse(), 3000);
       }, function(data, status){
         ga('send', 'event', 'button', 'click', 'get search deatil error', productInfo.prodCode);
         alert("조회 중 에러가 발생하였습니다.");
@@ -270,7 +275,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.more = "more";
       $scope.isListLoading = false;
 
-      $timeout(FB.XFBML.parse(), 3000);
+      $timeout($scope.FBParse(), 3000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get list error', nextPage);
       alert("조회 중 에러가 발생하였습니다.");
@@ -291,7 +296,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       nextPage = dataList.nextPage;
       $scope.more = "more";
       $scope.isListLoading = false;
-      $timeout(FB.XFBML.parse(), 3000);
+      $timeout($scope.FBParse(), 3000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get morelist error', nextPage);
       alert("조회 중 에러가 발생하였습니다.");
@@ -324,7 +329,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.more = "more";
       $scope.isListLoading = false;
 
-      $timeout(FB.XFBML.parse(), 3000);
+      $timeout($scope.FBParse(), 3000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get list error', nextPage);
       alert("조회 중 에러가 발생하였습니다.");
