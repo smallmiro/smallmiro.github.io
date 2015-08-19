@@ -168,7 +168,8 @@
 							        <h3>{{product.name}}</h3>
 											<p><h6>http://item.getlego.me/detail/{{product.prodCode}}</h6></p>
 											<p>
-												<div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div>
+												<!--div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div-->
+												<div class="fb-share-button" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="box_count"></div>
 											</p>
 							        <p ng-if="null == product.asin">상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
 											<p>
