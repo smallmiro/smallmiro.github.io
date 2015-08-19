@@ -199,7 +199,7 @@ mainHomeApp.factory('list', ['$http',  function($http) {
   };
 }]);
 
-mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, $log, product, list) {
+mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, $log, $timeout, product, list) {
   $scope.isLoading = false;
   $scope.isListLoading = false;
   $scope.navbarCollapsed = true;
@@ -235,12 +235,12 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         $scope.isLoading = false;
         $scope.isCollapsed = true;
 
+        $timeout(FB.XFBML.parse(), 3000);
       }, function(data, status){
         ga('send', 'event', 'button', 'click', 'get search deatil error', productInfo.prodCode);
         alert("조회 중 에러가 발생하였습니다.");
         $scope.isLoading = false;
       });
-      setTimeout(FB.XFBML.parse(), 3000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get search meta error', $scope.shopUrl);
       alert("조회 중 에러가 발생하였습니다.");
@@ -270,7 +270,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       $scope.more = "more";
       $scope.isListLoading = false;
 
-      setTimeout(FB.XFBML.parse(), 3000);
+      $timeout(FB.XFBML.parse(), 3000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get list error', nextPage);
       alert("조회 중 에러가 발생하였습니다.");
@@ -291,7 +291,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       nextPage = dataList.nextPage;
       $scope.more = "more";
       $scope.isListLoading = false;
-      setTimeout(FB.XFBML.parse(), 3000);
+      $timeout(FB.XFBML.parse(), 3000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get morelist error', nextPage);
       alert("조회 중 에러가 발생하였습니다.");
@@ -323,6 +323,8 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       nextPage = dataList.nextPage;
       $scope.more = "more";
       $scope.isListLoading = false;
+
+      $timeout(FB.XFBML.parse(), 3000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get list error', nextPage);
       alert("조회 중 에러가 발생하였습니다.");
