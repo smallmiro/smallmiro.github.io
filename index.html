@@ -20,7 +20,7 @@
 		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 
 
-		<script src="js/controller/home.js?20150814002"></script>
+		<script src="js/controller/home.js?20150814003"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<!--
 		<script src="js/angular-socialshare.min.js?20150728005"></script>
@@ -105,7 +105,9 @@
 				<header class="inner">
 					<div class="row">
 					  <div class="col-xs-12 col-sm-6 col-md-8"><h2 id="project_title">레고 공홈 가격비교 <small>Let's search!!</small></h2></div>
-					  <div class="col-xs-6 col-md-4"><div class="fb-like" data-href="http://www.getlego.me" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></div>
+					  <div class="col-xs-6 col-md-4">
+								<div class="fb-like" data-href="http://www.getlego.me" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+						</div></div>
 					</div>
 
 				</header>
@@ -170,7 +172,7 @@
 											<p><h6>http://item.getlego.me/detail/{{product.prodCode}}</h6></p>
 											<p>
 												<!--div facebook class="facebookShare" data-title='{{product.name}}' data-picture-url='{{product.image}}' data-url='http://item.getlego.me/detail/{{product.prodCode}}' data-shares='shares'>{{ shares }}</div-->
-												<div class="fb-like" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+
 											</p>
 							        <p ng-if="null == product.asin">상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
 											<p>
@@ -212,19 +214,18 @@
 							 </div>
 						   <div class="panel-body">
 								   <div class="row">
-								     <div class="col-sm-8">
+								     <div class="col-md-12">
 											 <blockquote>
 											  <p>카테고리 : {{product.category}}</p>
 											  <footer>item : <cite title="Source Title">{{product.prodCode}}</cite></footer>
 											</blockquote>
 								     </div>
-								     <div class="col-sm-4">
-								       <!--Body content-->
-											 <!--div class="fb-share-button" data-href="http://smallmiro.github.io/?prodcode={{product.prodCode}}" data-layout="box_count"></div-->
-											 <div class="fb-share-button" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="box_count"></div>
-								     </div>
 								   </div>
-
+								   <div class="row">
+								     <div class="col-md-12">
+									 	 	<div class="fb-like" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+										</div>
+									</div>
 						   </div>
 						   <!-- Table -->
 							 <div class="table-responsive">

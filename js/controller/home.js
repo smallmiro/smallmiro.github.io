@@ -235,7 +235,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         $scope.isLoading = false;
         $scope.isCollapsed = true;
 
-        FB.XFBML.parse()
+        setTimeout(FB.XFBML.parse(), 2000);
       }, function(data, status){
         ga('send', 'event', 'button', 'click', 'get search deatil error', productInfo.prodCode);
         alert("조회 중 에러가 발생하였습니다.");
@@ -269,7 +269,8 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
       nextPage = dataList.nextPage;
       $scope.more = "more";
       $scope.isListLoading = false;
-      FB.XFBML.parse() 
+
+      setTimeout(FB.XFBML.parse(), 2000);
     }, function(data, status){
       ga('send', 'event', 'button', 'click', 'get list error', nextPage);
       alert("조회 중 에러가 발생하였습니다.");
