@@ -21,7 +21,7 @@
 		<script src="/js/Chart.js"></script>
 		<script src="/js/angular-chart.js"></script>
 
-		<script src="/js/controller/home.js?20150819001"></script>
+		<script src="/js/controller/home.js?20150826006"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="/css/angular-chart.css">
 		<!--
@@ -209,13 +209,16 @@
 						    <h4>가격 변화</h4>
 						    </div>
 						    <div class="panel-body">
-
+									<canvas id="line" class="chart chart-line" data="data" colours="colours"
+									  labels="labels" legend="true" series="series" options="options"
+									  click="onClick">
+									</canvas>
 						    </div>
 						  </div>
 						</div>
 					</div>
 					<div class="row" ng-repeat="product in products">
-						<div class="col-sm-12 col-md-8">
+						<div class="col-sm-12 col-md-12">
 							<div class="panel panel-default">
 							<!-- Default panel contents -->
 						   <div class="panel-heading">
