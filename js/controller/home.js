@@ -1,6 +1,6 @@
 //var baseUrl = "http://ec2-54-173-63-112.compute-1.amazonaws.com";
 var baseUrl = "http://item.getlego.me";
-var mainHomeApp = angular.module('topApp', ['ui.bootstrap']);
+var mainHomeApp = angular.module('topApp', ['ui.bootstrap', "chart.js"]);
 mainHomeApp.config(function($locationProvider) {
   $locationProvider.html5Mode({
     enabled: true,
@@ -387,4 +387,15 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     alert("조회 중 에러가 발생하였습니다.");
     $scope.isListLoading = false;
   });
+
+
+    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+    $scope.series = ['Series A', 'Series B'];
+    $scope.data = [
+      [65, 59, 80, 81, 56, 55, 40],
+      [28, 48, 40, 19, 86, 27, 90]
+    ];
+    $scope.onClick = function (points, evt) {
+      console.log(points, evt);
+    };  
 });
