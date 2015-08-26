@@ -239,6 +239,11 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         $scope.products = [productInfo];
         $scope.isLoading = false;
         $scope.isCollapsed = true;
+        $scope.labels = prices.history.priceBass;
+        $scope.data = [
+          prices.history.amazonPrice,
+          prices.history.usPrice
+        ];
 
         $timeout($scope.FBParse, 3000);
       }, function(data, status){
@@ -389,7 +394,6 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
   });
 
 
-    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
     $scope.series = ['Amazon','Lego US'];
     $scope.colours = [
       { // grey
@@ -408,7 +412,7 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         pointHighlightFill: '#fff',
         pointHighlightStroke: 'rgba(77,83,96,1)'
       }
-    ];    
+    ];
     $scope.options = {
         bezierCurve : false,
         //Number - Tension of the bezier curve between points
@@ -416,10 +420,8 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
         //String - A legend template
         legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
     };
-    $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40],
-      [65, 59, 80, 81, 56, 55, 40]
-    ];
+
+
     $scope.onClick = function (points, evt) {
       console.log(points, evt);
     };
