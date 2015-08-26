@@ -199,7 +199,7 @@ mainHomeApp.factory('list', ['$http',  function($http) {
   };
 }]);
 
-mainHomeApp.controller('legoController',  function($scope, $document, $http, $window, $location, $log, $timeout, product, list) {
+mainHomeApp.controller('legoController','LineCtrl',  function($scope, $document, $http, $window, $location, $log, $timeout, product, list) {
   $scope.isLoading = false;
   $scope.isListLoading = false;
   $scope.navbarCollapsed = true;
@@ -397,5 +397,5 @@ mainHomeApp.controller('legoController',  function($scope, $document, $http, $wi
     ];
     $scope.onClick = function (points, evt) {
       console.log(points, evt);
-    };  
+    };
 });
