@@ -157,7 +157,7 @@ mainHomeApp.factory('product', ['$http',  function($http) {
       });
     },
     getAd: function(callback, errorcallback) {
-      var callurl = "/data/ad.json?2015090703";
+      var callurl = "/data/ad.json?2015090704";
       $http.get(callurl)
           .success(function(data){
               callback(data);
