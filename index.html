@@ -129,9 +129,17 @@
 			<div id="add_content_wrap" class="outer" style="padding-bottom: 20px;cursor: pointer;border: 1px solid #eee; border-radius: 5px;" ng-click="clickAdd(link)">
 				<div class="row">
 				  <div class="col-xs-4 col-md-2 text-center" style="padding-top: 10px;padding-bottom: 10px;">
-				      <img border="0" ng-src="{{ img }}" >
-							<span class="label label-info">{{ price }}</span>
-				      <img ng-src="{{uvImage}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<img border="0" ng-src="{{ img }}" >
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<span class="label label-info">{{ price }}</span>
+					      <img ng-src="{{uvImage}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+							</div>
+						</div>
 				  </div>
 				  <div class="col-xs-8 col-md-10">
 							<div class="col-xs-12 col-md-12">
