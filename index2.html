@@ -21,7 +21,7 @@
 		<script src="/js/Chart.js"></script>
 		<script src="/js/angular-chart.js"></script>
 
-		<script src="/js/controller/home.js?20150826006"></script>
+		<script src="/js/controller/home.js?2015090701"></script>
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="/css/angular-chart.css">
 		<!--
@@ -123,18 +123,23 @@
 						<span class="label label-danger" ng-show="isLoading">Loading.....</span>
 					</center>
 				</p>
-				<p class="text-right">
-					<div class="fb-like col-md-12" data-href="http://www.getlego.me" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
-				</p>
 			</div>
 		</div>
 		<div class="container" style="padding-bottom: 20px">
 			<div id="add_content_wrap" class="outer" style="padding-bottom: 20px;cursor: pointer;border: 1px solid #eee; border-radius: 5px;" ng-click="clickAdd(link)">
 				<div class="row">
 				  <div class="col-xs-4 col-md-2 text-center" style="padding-top: 10px;padding-bottom: 10px;">
-				      <img border="0" ng-src="{{ img }}" >
-							<span class="label label-info">{{ price }}</span>
-				      <img ng-src="{{uvImage}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<img border="0" ng-src="{{ img }}" >
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<span class="label label-info" style="width:100%">{{ price }}</span>
+					      <img ng-src="{{uvImage}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+							</div>
+						</div>
 				  </div>
 				  <div class="col-xs-8 col-md-10">
 							<div class="col-xs-12 col-md-12">
@@ -172,6 +177,10 @@
 
 											</p>
 							        <p>상품 이미지의 저작권은 shop.lego.com이 가지고 있습니다.</p>
+											<p>
+												<div class="fb-send" data-href="http://item.getlego.me/detail/{{product.prodCode}}"></div>
+												<div class="fb-share-button" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="button_count"></div>
+											</p>
 											<p>
 												<blockquote>
 												 <p>
@@ -229,15 +238,10 @@
 								     <div class="col-md-12">
 											 <blockquote>
 											  <p>카테고리 : {{product.category}}</p>
-											  <footer>item : <cite title="Source Title">{{product.prodCode}}</cite></footer>
+											  <p>item : <cite title="Source Title">{{product.prodCode}}</cite></p>
 											</blockquote>
 								     </div>
 								   </div>
-								   <div class="row">
-								     <div class="col-md-12">
-									 	 	<div class="fb-like" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"  data-width="225px"></div>
-										</div>
-									</div>
 						   </div>
 						   <!-- Table -->
 							 <div class="table-responsive">
@@ -289,7 +293,6 @@
 							<tab heading="Technic" select="getCategoryList('Technic','')"></tab>
 							<tab heading="Minifigures" select="getCategoryList('Minifigures','')"></tab>
 							<tab heading="Scooby Doo" select="getCategoryList('Scooby Doo','')"></tab>
-							Minifigures
 						 </tabset>
 					 </div>
 				 </div>
