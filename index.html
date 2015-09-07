@@ -123,9 +123,6 @@
 						<span class="label label-danger" ng-show="isLoading">Loading.....</span>
 					</center>
 				</p>
-				<p class="text-right">
-					<div class="fb-like col-md-12" data-href="http://www.getlego.me" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
-				</p>
 			</div>
 		</div>
 		<div class="container" style="padding-bottom: 20px">
@@ -229,15 +226,11 @@
 								     <div class="col-md-12">
 											 <blockquote>
 											  <p>카테고리 : {{product.category}}</p>
-											  <footer>item : <cite title="Source Title">{{product.prodCode}}</cite></footer>
+											  <p>item : <cite title="Source Title">{{product.prodCode}}</cite></p>
+												<p><div class="fb-share-button" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="button_count"></div></p>
 											</blockquote>
 								     </div>
 								   </div>
-								   <div class="row">
-								     <div class="col-md-12">
-									 	 	<div class="fb-like" data-href="http://item.getlego.me/detail/{{product.prodCode}}" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"  data-width="225px"></div>
-										</div>
-									</div>
 						   </div>
 						   <!-- Table -->
 							 <div class="table-responsive">
