@@ -248,7 +248,7 @@
 									 <th></th>
 								 </tr>
 									 <tr ng-if="'am-US' != price.country" ng-repeat="price in product.prices" data-container="body" data-toggle="tooltip" data-placement="bottom" title="{{price.availabilityMessage}}">
-								 		<td class="text-center">
+								 		<td class="text-center" style="width:50px">
 											<span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}">
 												<img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}
 											</span>
@@ -256,10 +256,10 @@
 
 										<td ng-if="0 == price.salePrice" class="text-right" style="width:150px">{{price.price | number:0}} {{price.moneyType}}</td>
 										<td ng-if="0 != price.salePrice" class="text-right" style="width:150px"><strike>{{price.price | number:0}}</strike> : {{price.salePrice | number:0}} {{price.moneyType}}</td>
-								 		<td class="text-right" style="width:100px">{{price.krw | number:0}} krw</td>
-								 		<td class="text-right">{{price.buyLimit | number:0}} 개</td>
-										<td class="text-left" style="width:300px;">{{price.availabilityMessage}}</td>
-										<td class="text-center"><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
+								 		<td class="text-right" style="width:150px">{{price.krw | number:0}} krw</td>
+								 		<td class="text-right" style="width:50px">{{price.buyLimit | number:0}} 개</td>
+										<td class="text-left">{{price.availabilityMessage}}</td>
+										<td class="text-center" style="width:50px"><a href="{{product | shopUrl:price.country}}" target="{{price.country}}"><button type="button" class="btn btn-info btn-xs">Go!</button></a></tb>
 								 	</tr>
 								 	<tr class="info">
 								 		<td  colspan="2" class="text-center">평균</td>
