@@ -126,7 +126,7 @@
 			</div>
 		</div>
 		<div class="container" style="padding-bottom: 20px">
-			<div class="outer" style="padding-bottom: 20px;cursor: pointer;border: 1px solid #eee; border-radius: 5px;">
+			<div class="outer" style="cursor: pointer;border: 0px solid #eee; border-radius: 5px;">
 
 				<div class="row">
 					<div class="col-sm-12 text-center">
@@ -247,7 +247,7 @@
 									 <th class="text-center">판매 메세지</th>
 									 <th></th>
 								 </tr>
-									 <tr ng-if="'am-US' != price.country" ng-repeat="price in product.prices" data-container="body" data-toggle="tooltip" data-placement="bottom" title="{{price.availabilityMessage}}">
+									 <tr ng-if="'am-US' != price.country " ng-repeat="price in product.prices" data-container="body" data-toggle="tooltip" data-placement="bottom" title="{{price.availabilityMessage}}">
 								 		<td class="text-center" style="width:50px">
 											<span class="label label-{{price | prodStatus}}" alt="{{price.availabilityMessage}}">
 												<img ng-src="{{price.country | countryImage}}" height="16" > {{price.country | countryName}}
