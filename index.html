@@ -254,8 +254,8 @@
 											</span>
 										</td>
 
-										<td ng-if="0 == product.salePrice" class="text-right" style="width:100px">{{price.price | number:0}} {{price.moneyType}}</td>
-										<td ng-if="0 != product.salePrice" class="text-right" style="width:100px"><strike>{{price.price | number:0}}</strike> : {{price.salePrice | number:0}} {{price.moneyType}}</td>
+										<td ng-if="0 == price.salePrice" class="text-right" style="width:150px">{{price.price | number:0}} {{price.moneyType}}</td>
+										<td ng-if="0 != price.salePrice" class="text-right" style="width:150px"><strike>{{price.price | number:0}}</strike> : {{price.salePrice | number:0}} {{price.moneyType}}</td>
 								 		<td class="text-right" style="width:100px">{{price.krw | number:0}} krw</td>
 								 		<td class="text-right">{{price.buyLimit | number:0}} 개</td>
 										<td class="text-left" style="overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;width:300px;">{{price.availabilityMessage}}</td>
