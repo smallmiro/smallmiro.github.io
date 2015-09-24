@@ -269,7 +269,7 @@
 											</span>
 										</td>
 
-										<td ng-if="0 == price.salePrice" class="text-right" style="width:150px">{{price.price | number:0}} {{price.moneyType}}</td>
+										<td ng-if="0 == price.salePrice" class="text-right" style="width:150px"><money class="price {{price.moneyType}}">{{price.price | number:0}} {{price.moneyType}}</money></td>
 										<td ng-if="0 != price.salePrice" class="text-right" style="width:150px"><money class="price {{price.moneyType}}"><strike>{{price.price | number:0}}</strike> : {{price.salePrice | number:0}}</money></td>
 								 		<td class="text-right" style="width:150px"><money class="price KRW">{{price.krw | number:0}}</money></td>
 								 		<td class="text-right" style="width:50px">{{price.buyLimit | number:0}} 개</td>
