@@ -196,15 +196,15 @@
 													 <table class="table table-condensed">
 														 <tr class="{{product.priceModel.average | maxPrice: product.priceModel.amazonPrice:product.priceModel.koreaPrice}}">
 															 <td class="text-center">공홈평균</td>
-															 <td class="text-right">{{product.priceModel.average | number:0}} krw</td>
+															 <td class="text-right"><money class="price KRW">{{product.priceModel.average | number:0}}</money></td>
 														 </tr>
 														 <tr class="{{product.priceModel.amazonPrice | maxPrice: product.priceModel.average:product.priceModel.koreaPrice}}">
 															 <td class="text-center">아마존</td>
-															 <td class="text-right">{{product.priceModel.amazonPrice | number:0}} krw</td>
+															 <td class="text-right"><money class="price KRW">{{product.priceModel.amazonPrice | number:0}}</money></td>
 														 </tr>
 														 <tr class="{{product.priceModel.koreaPrice | maxPrice: product.priceModel.amazonPrice:product.priceModel.average}}">
 															 <td class="text-center">한국</td>
-															 <td class="text-right">{{product.priceModel.koreaPrice | number:0}} krw</td>
+															 <td class="text-right"><money class="price KRW">{{product.priceModel.koreaPrice | number:0}}</money></td>
 														 </tr>
 													 </table>
 												 </p>
@@ -331,15 +331,15 @@
 										 <table class="table table-condensed">
 											 <tr class="{{product.priceModel.average | maxPrice: product.priceModel.amazonPrice:product.priceModel.koreaPrice}}">
 												 <td class="text-center">평균</td>
-												 <td class="text-right">{{product.priceModel.average | number:0}} krw</td>
+												 <td class="text-right"><money class="price KRW">{{product.priceModel.average | number:0}}</money></td>
 											 </tr>
 											 <tr class="{{product.priceModel.amazonPrice | maxPrice: product.priceModel.average:product.priceModel.koreaPrice}}">
 												 <td class="text-center">아마존</td>
-												 <td class="text-right">{{product.priceModel.amazonPrice | number:0}} krw</td>
+												 <td class="text-right"><money class="price KRW">{{product.priceModel.amazonPrice | number:0}}</money></td>
 											 </tr>
 											 <tr class="{{product.priceModel.koreaPrice | maxPrice: product.priceModel.amazonPrice:product.priceModel.average}}">
 												 <td class="text-center">한국</td>
-												 <td class="text-right">{{product.priceModel.koreaPrice | number:0}} krw</td>
+												 <td class="text-right"><money class="price KRW">{{product.priceModel.koreaPrice | number:0}}</money></td>
 											 </tr>
 										 </table>
 									</p>
