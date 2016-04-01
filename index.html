@@ -417,5 +417,24 @@
 						<a href="mailto:smallmiro@gmail.com" target="_self" class="label label-default"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> smallmiro</a>
 		      </div>
 			</footer>
+  <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+  <script>
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+
+    var pusher = new Pusher('4b7d1c507cf1387b51e6', {
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('prod_noti');
+    channel.bind('my_event', function(data) {
+      //alert(data.message);
+      window.console.log(data);
+    });
+  </script>			
 	</body>
 </html>
